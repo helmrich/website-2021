@@ -1,0 +1,160 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 50px;
+  background-color: var(--primary-bg-color);
+}
+
+.logo {
+  color: var(--secondary-fg-color);
+  font-family: var(--monospace-font);
+  font-weight: 700;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  opacity: 0.75;
+}
+
+.logo > * {
+  transition: 0.25s;
+}
+
+.logo:hover {
+  opacity: 1;
+}
+
+.logo:hover .logoBracket:first-child {
+  margin-right: 0;
+}
+
+.logo:hover .logoBracket:last-child {
+  margin-left: 0;
+}
+
+.logoBracket:first-child {
+  margin-right: 0.5rem;
+}
+
+.logoBracket:last-child {
+  padding-left: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+.linkList {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  top: 60px;
+  left: 0;
+  padding: 25px 0 50px 0;
+  gap: 50px;
+  background-color: var(--primary-bg-color);
+  font-size: 1.25rem;
+  z-index: 10;
+  transition: all 0.25s;
+}
+
+.link {
+  opacity: 0.75;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+.icon {
+  height: 24px;
+  width: 24px;
+}
+
+.hamburgerIcon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  opacity: 0.75;
+  transition: all 0.25s;
+}
+
+.hamburgerIcon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.hamburgerIcon span {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--primary-fg-color);
+  transform-origin: center;
+  transition: all 0.25s;
+}
+
+.hamburgerIcon span:nth-child(1) {
+  top: 0;
+}
+
+.hamburgerIcon span:nth-child(2) {
+  top: 8px;
+  right: 0;
+  width: 80%;
+}
+
+.hamburgerIcon span:nth-child(3) {
+  top: 16px;
+  right: 0;
+  width: 60%;
+}
+
+.hamburgerIcon.open span:nth-child(1) {
+  top: 8px;
+  transform: rotate(45deg);
+}
+
+.hamburgerIcon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburgerIcon.open span:nth-child(3) {
+  top: 8px;
+  width: 100%;
+  transform: rotate(135deg);
+}
+
+@media only screen and (max-width: 767px) {
+  .linkList.hidden {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .nav {
+    padding: 0 100px;
+  }
+
+  .linkList {
+    display: flex;
+    position: relative;
+    top: 0;
+    flex-direction: row;
+    gap: 50px;
+    font-size: 1rem;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  .icon {
+    height: 20px;
+    width: 20px;
+  }
+
+  .hamburgerIcon {
+    display: none;
+  }
+}

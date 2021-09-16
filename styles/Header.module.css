@@ -1,0 +1,55 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  min-height: 60vh;
+  padding: 25px 50px 150px 50px;
+  background-color: var(--secondary-bg-color);
+}
+
+.text {
+  width: 100%;
+}
+
+.smallText {
+  font-size: clamp(0.75rem, 0.75rem + 2vw, 2rem);
+}
+
+.largeText {
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.25rem + 4vw, 3rem);
+}
+
+.jobText {
+  display: inline-block;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(120% + 1.3px);
+  height: 90px;
+}
+
+.wave .shapeFill {
+  fill: var(--primary-bg-color);
+}
+
+@media only screen and (min-width: 1024px) {
+  .text {
+    align-self: flex-start;
+    max-width: 50%;
+  }
+}

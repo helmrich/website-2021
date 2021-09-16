@@ -1,0 +1,97 @@
+.about {
+  position: relative;
+  padding: 150px 50px 250px 50px;
+}
+
+.heading {
+  color: var(--secondary-fg-color);
+  margin-bottom: 2rem;
+  font-size: clamp(1.25rem, 1.25rem + 4vw, 3rem);
+  text-transform: uppercase;
+}
+
+.contentWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.informationText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.basicInformationText {
+  font-weight: 700;
+  font-size: clamp(0.85rem, 0.85rem + 1vw, 1.55rem);
+  line-height: clamp(1.3rem, 1.3rem + 1vw, 1.9rem);
+}
+
+.furtherInformationText {
+  font-size: clamp(0.75rem, 0.75rem + 1vw, 1.1rem);
+  line-height: clamp(1.2rem, 1.2rem + 1vw, 1.55rem);
+}
+
+.placeholderBox {
+  background-color: var(--secondary-bg-color);
+  height: 250px;
+  width: 100%;
+  border-radius: 25px;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* @keyframes moveToRight {
+  from {
+    left: -20%;
+  }
+  to {
+    left: 0%;
+  }
+} */
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(115% + 1.3px);
+  height: 95px;
+  /* left: -20%;
+  animation-name: moveToRight;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse; */
+}
+
+.wave .shapeFill {
+  fill: var(--secondary-bg-color);
+}
+
+@media only screen and (min-width: 768px) {
+  .heading {
+    text-align: center;
+  }
+
+  .informationText {
+    max-width: 60%;
+  }
+
+  .contentWrapper {
+    flex-direction: row;
+  }
+
+  .placeholderBox {
+    max-width: 35%;
+  }
+}

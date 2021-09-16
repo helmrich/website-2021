@@ -1,16 +1,56 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
+:root {
+  --primary-bg-color: #ffffff;
+  --secondary-bg-color: #fdf6fa;
+  --primary-fg-color: #3f3038;
+  --secondary-fg-color: #f361af;
+  --main-font: 'Rubik', sans-serif;
+  --monospace-font: 'IBM Plex Mono', monospace;
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-fg-color);
+  font-family: var(--main-font);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: var(--primary-fg-color);
+  text-decoration: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+section {
+  padding: 100px 50px 200px;
+}
+
+.highlighted {
+  color: var(--secondary-fg-color);
+}
+
+.highlightedLink {
+  transition: all 0.25s;
+  border-bottom: 3px solid var(--secondary-fg-color);
+}
+
+.highlightedLink:hover {
+  color: var(--primary-bg-color);
+  background-color: var(--secondary-fg-color);
 }

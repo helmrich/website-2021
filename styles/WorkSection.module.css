@@ -1,0 +1,32 @@
+.work {
+  position: relative;
+  padding: 150px 50px 250px 50px;
+  background-color: var(--secondary-bg-color);
+}
+
+.heading {
+  color: var(--secondary-fg-color);
+  margin-bottom: 2rem;
+  font-size: clamp(1.25rem, 1.25rem + 4vw, 3rem);
+  text-transform: uppercase;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 81px;
+}
+
+.wave .shapeFill {
+  fill: var(--primary-bg-color);
+}
