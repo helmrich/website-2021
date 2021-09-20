@@ -1,6 +1,4 @@
 .work {
-  position: relative;
-  padding: 150px 50px 250px 50px;
   background-color: var(--secondary-bg-color);
 }
 
@@ -9,6 +7,15 @@
   margin-bottom: 2rem;
   font-size: clamp(1.25rem, 1.25rem + 4vw, 3rem);
   text-transform: uppercase;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0;
 }
 
 .wave {
@@ -29,4 +36,10 @@
 
 .wave .shapeFill {
   fill: var(--primary-bg-color);
+}
+
+@media only screen and (min-width: 1280px) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
 }

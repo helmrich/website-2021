@@ -1,9 +1,28 @@
 import styles from '../../styles/WorkSection.module.css';
+import { Project } from '../../types/Project';
+import ProjectCard from './ProjectCard';
 
-const WorkSection = () => {
+interface WorkSectionProps {
+  projects: Project[];
+}
+
+const WorkSection = ({ projects }: WorkSectionProps) => {
   return (
     <section id="work" className={styles.work}>
-      <h2 className={styles.heading}>Work</h2>
+      <h2>Work</h2>
+
+      <section className={styles.projects}>
+        {projects.map((project) => {
+          console.log(project);
+
+          return (
+            <ProjectCard
+              key={`${project.title}-${project.year}`}
+              project={project}
+            />
+          );
+        })}
+      </section>
 
       <div className={styles.wave}>
         <svg

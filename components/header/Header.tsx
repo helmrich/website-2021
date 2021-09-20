@@ -3,14 +3,16 @@ import styles from '../../styles/Header.module.css';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.text}>
-        <p className={styles.smallText}>
-          Hi! I’m <span className="highlighted">Tobias Helmrich</span>, creative
-          developer.
-        </p>
-        <p className={styles.largeText}>
-          I love crafting beautiful and enjoyable web experiences.
-        </p>
+      <div className={styles.textWrapper}>
+        <div className={styles.text}>
+          <p className={styles.smallText}>
+            Hi! I’m <span className="highlighted">Tobias Helmrich</span>,
+            creative developer.
+          </p>
+          <p className={styles.largeText}>
+            I love crafting beautiful and enjoyable web experiences.
+          </p>
+        </div>
       </div>
       <div className={styles.wave}>
         <svg

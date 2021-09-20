@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: var(--primary-bg-color);
+  border-radius: var(--border-radius);
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 25px 50px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: clamp(1rem, 1rem + 1vw, 2rem);
+}
+
+.description {
+  font-weight: 400;
+  opacity: 0.5;
+  font-size: clamp(0.75rem, 0.75rem + 1vw, 1rem);
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-radius: 0.25rem 0 var(--border-radius) 0;
+  overflow: hidden;
+  width: 85%;
+}
+
+.image {
+  width: 100%;
+  transform: scale(1.004);
+}
+
+.imageOverlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.7;
+  background-color: var(--secondary-fg-color);
+}
+
+@media only screen and (min-width: 768px) {
+  .textContainer {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+}

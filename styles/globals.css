@@ -5,6 +5,8 @@
   --secondary-fg-color: #f361af;
   --main-font: 'Rubik', sans-serif;
   --monospace-font: 'IBM Plex Mono', monospace;
+  --border-radius: 1rem;
+  --max-width: 1280px;
 }
 
 * {
@@ -38,7 +40,22 @@ button {
 }
 
 section {
-  padding: 100px 50px 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  padding: 100px 50px 250px 50px;
+}
+
+section h2 {
+  color: var(--secondary-fg-color);
+  margin-bottom: 2rem;
+  font-size: clamp(2.25rem, 2rem + 4vw, 4.5rem);
+  text-transform: uppercase;
+  text-align: left;
+  width: 100%;
+  max-width: 1280px;
 }
 
 .highlighted {
@@ -53,4 +70,19 @@ section {
 .highlightedLink:hover {
   color: var(--primary-bg-color);
   background-color: var(--secondary-fg-color);
+}
+
+::selection {
+  color: var(--primary-bg-color);
+  background-color: var(--secondary-fg-color);
+}
+
+@media only screen and (min-width: 1280px) {
+  section {
+    align-items: center;
+  }
+
+  section h2 {
+    margin-bottom: 3.5rem;
+  }
 }

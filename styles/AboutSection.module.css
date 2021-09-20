@@ -1,21 +1,10 @@
-.about {
-  position: relative;
-  padding: 150px 50px 250px 50px;
-}
-
-.heading {
-  color: var(--secondary-fg-color);
-  margin-bottom: 2rem;
-  font-size: clamp(1.25rem, 1.25rem + 4vw, 3rem);
-  text-transform: uppercase;
-}
-
 .contentWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
+  max-width: var(--max-width);
 }
 
 .informationText {
@@ -79,10 +68,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .heading {
-    text-align: center;
-  }
-
   .informationText {
     max-width: 60%;
   }

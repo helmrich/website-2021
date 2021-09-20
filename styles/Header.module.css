@@ -2,15 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
-  width: 100%;
   min-height: 60vh;
   padding: 25px 50px 150px 50px;
   background-color: var(--secondary-bg-color);
 }
 
-.text {
-  width: 100%;
+.textWrapper {
+  display: flex;
+  justify-content: flex-start;
+  max-width: var(--max-width);
 }
 
 .smallText {
@@ -19,7 +21,7 @@
 
 .largeText {
   font-weight: 700;
-  font-size: clamp(1.25rem, 1.25rem + 4vw, 3rem);
+  font-size: clamp(2rem, 2rem + 4vw, 4rem);
 }
 
 .jobText {
