@@ -6,8 +6,6 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
-  console.log(project);
-
   return (
     <article className={styles.card}>
       <div className={styles.textContainer}>

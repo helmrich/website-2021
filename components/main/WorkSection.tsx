@@ -13,8 +13,6 @@ const WorkSection = ({ projects }: WorkSectionProps) => {
 
       <section className={styles.projects}>
         {projects.map((project) => {
-          console.log(project);
-
           return (
             <ProjectCard
               key={`${project.title}-${project.year}`}

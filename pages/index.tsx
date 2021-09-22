@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
 import type { GetStaticProps, NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import Header from '../components/header/Header';
@@ -11,8 +14,6 @@ interface HomeProps {
 }
 
 const Home = ({ projects }: HomeProps) => {
-  console.log(projects);
-
   return (
     <>
       <Header />
@@ -29,61 +30,27 @@ const Home = ({ projects }: HomeProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
+  // Get files from projects directory
+  const files = fs.readdirSync(path.join('projects'));
+
+  // Get slug and frontmatter from project markdown files
+  const projects = files.map((projectFilename) => {
+    const slug = projectFilename.replace('.md', '');
+    const markdownWithMeta = fs.readFileSync(
+      path.join('projects', projectFilename),
+      'utf-8'
+    );
+
+    const { data: frontmatter, content } = matter(markdownWithMeta);
+
+    return { slug, frontmatter };
+  });
+
+  console.log(projects);
+
   return {
     props: {
-      projects: [
-        {
-          title: 'consumat.io',
-          description: 'Movie and Series Tracker Web App',
-          tags: [
-            'TypeScript',
-            'React',
-            'Tailwind CSS',
-            'Next.js',
-            'Apollo GraphQL',
-          ],
-          year: 2021,
-          imagePath: '/images/projects/consumat-io.png',
-          detailImagePaths: [
-            '/images/projects/consumat-io-1.png',
-            '/images/projects/consumat-io-2.png',
-          ],
-        },
-        {
-          title: 'Etch-a-Sketch',
-          description: 'Sketch Web App',
-          tags: [
-            'TypeScript',
-            'React',
-            'Tailwind CSS',
-            'Next.js',
-            'Apollo GraphQL',
-          ],
-          year: 2021,
-          imagePath: '/images/projects/consumat-io.png',
-          detailImagePaths: [
-            '/images/projects/consumat-io-1.png',
-            '/images/projects/consumat-io-2.png',
-          ],
-        },
-        {
-          title: 'Kisetsu',
-          description: 'Anime Tracking App',
-          tags: [
-            'TypeScript',
-            'React',
-            'Tailwind CSS',
-            'Next.js',
-            'Apollo GraphQL',
-          ],
-          year: 2021,
-          imagePath: '/images/projects/consumat-io.png',
-          detailImagePaths: [
-            '/images/projects/consumat-io-1.png',
-            '/images/projects/consumat-io-2.png',
-          ],
-        },
-      ],
+      projects,
     },
   };
 };
