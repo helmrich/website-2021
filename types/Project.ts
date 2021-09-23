@@ -1,13 +1,6 @@
-export interface Project {
+import Frontmatter from './Frontmatter';
+
+export default interface Project {
   slug: string;
-  frontmatter: {
-    title: string;
-    description: string;
-    tags: string[];
-    year: number;
-    linkUrl?: string;
-    githubLinkUrl?: string;
-    imagePath: string;
-    detailImagePaths?: string[];
-  };
+  frontmatter: Frontmatter;
 }

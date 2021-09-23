@@ -6,6 +6,10 @@
   border-radius: var(--border-radius);
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .textContainer {
   display: flex;
   flex-direction: column;

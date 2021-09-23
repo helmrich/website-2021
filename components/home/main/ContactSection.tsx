@@ -1,4 +1,4 @@
-import styles from '../../styles/ContactSection.module.css';
+import styles from '../../../styles/ContactSection.module.css';
 
 const ContactSection = () => {
   return (
@@ -16,6 +16,7 @@ const ContactSection = () => {
         or send me a{' '}
         <a
           href="mailto:tobias.g.helmrich@gmail.com"
+          target="_blank"
           className="highlightedLink"
         >
           mail

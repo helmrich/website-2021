@@ -1,5 +1,5 @@
-import styles from '../../styles/WorkSection.module.css';
-import { Project } from '../../types/Project';
+import styles from '../../../styles/WorkSection.module.css';
+import Project from '../../../types/Project';
 import ProjectCard from './ProjectCard';
 
 interface WorkSectionProps {

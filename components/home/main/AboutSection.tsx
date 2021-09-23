@@ -1,4 +1,4 @@
-import styles from '../../styles/AboutSection.module.css';
+import styles from '../../../styles/AboutSection.module.css';
 
 const AboutSection = () => {
   return (

@@ -3,11 +3,11 @@ import path from 'path';
 import matter from 'gray-matter';
 import type { GetStaticProps, NextPage } from 'next';
 import styles from '../styles/Home.module.css';
-import Header from '../components/header/Header';
-import AboutSection from '../components/main/AboutSection';
-import WorkSection from '../components/main/WorkSection';
-import { Project } from '../types/Project';
-import ContactSection from '../components/main/ContactSection';
+import Header from '../components/home/header/Header';
+import AboutSection from '../components/home/main/AboutSection';
+import WorkSection from '../components/home/main/WorkSection';
+import Project from '../types/Project';
+import ContactSection from '../components/home/main/ContactSection';
 
 interface HomeProps {
   projects: Project[];
@@ -29,7 +29,7 @@ const Home = ({ projects }: HomeProps) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export async function getStaticProps() {
   // Get files from projects directory
   const files = fs.readdirSync(path.join('projects'));
 
@@ -41,7 +41,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       'utf-8'
     );
 
-    const { data: frontmatter, content } = matter(markdownWithMeta);
+    const { data: frontmatter } = matter(markdownWithMeta);
 
     return { slug, frontmatter };
   });
@@ -51,6 +51,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
       projects,
     },
   };
-};
+}
 
 export default Home;
