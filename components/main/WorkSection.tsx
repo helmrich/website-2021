@@ -15,7 +15,7 @@ const WorkSection = ({ projects }: WorkSectionProps) => {
         {projects.map((project) => {
           return (
             <ProjectCard
-              key={`${project.title}-${project.year}`}
+              key={`${project.frontmatter.title}-${project.frontmatter.year}`}
               project={project}
             />
           );

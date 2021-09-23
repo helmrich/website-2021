@@ -46,8 +46,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return { slug, frontmatter };
   });
 
-  console.log(projects);
-
   return {
     props: {
       projects,
