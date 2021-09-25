@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import type { GetStaticProps, NextPage } from 'next';
 import styles from '../styles/Home.module.css';
 import Header from '../components/home/header/Header';
 import AboutSection from '../components/home/main/AboutSection';
@@ -48,7 +47,9 @@ export async function getStaticProps() {
 
   return {
     props: {
-      projects,
+      projects: projects.sort((a, b) => {
+        return a.frontmatter.year - b.frontmatter.year;
+      }),
     },
   };
 }
