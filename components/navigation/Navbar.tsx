@@ -19,18 +19,19 @@ const Navbar = () => {
         className={`${styles.linkList} ${!isMobileMenuOpen && styles.hidden}`}
       >
         <li>
-          <NavLink title="About" href="#about" />
+          <NavLink title="About" href="/#about" />
         </li>
         <li>
-          <NavLink title="Work" href="#work" />
+          <NavLink title="Work" href="/#work" />
         </li>
         <li>
-          <NavLink title="Contact" href="#contact" />
+          <NavLink title="Contact" href="/#contact" />
         </li>
         <li className={styles.icon}>
           <a
             href="https://twitter.com/tobias_helmrich"
             target="_blank"
+            rel="noopener noreferrer"
             className={styles.link}
           >
             <svg
@@ -47,6 +48,7 @@ const Navbar = () => {
           <a
             href="https://github.com/helmrich"
             target="_blank"
+            rel="noopener noreferrer"
             className={styles.link}
           >
             <svg
