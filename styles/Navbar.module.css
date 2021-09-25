@@ -1,8 +1,13 @@
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: var(--nav-height);
   padding: 0 50px;
   background-color: var(--primary-bg-color);
 }
