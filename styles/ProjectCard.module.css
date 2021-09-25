@@ -32,13 +32,10 @@
 
 .imageContainer {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
   border-radius: 0.25rem 0 var(--border-radius) 0;
   overflow: hidden;
   width: 85%;
+  aspect-ratio: var(--main-image-aspect-ratio);
 }
 
 .image {
