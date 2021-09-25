@@ -1,3 +1,9 @@
+.smallText,
+.largeText {
+  text-align: center;
+  width: 100%;
+}
+
 .smallText {
   font-weight: 400;
   font-size: clamp(0.75rem, 0.75rem + 2vw, 2rem);

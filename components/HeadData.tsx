@@ -30,12 +30,6 @@ const HeadData = ({
       {/* <meta name="twitter:image" content="" /> */}
       {/* <link rel="icon" href="/favicon.ico" />
       <link rel="manifest" href="/manifest.json"></link> */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" />
-      <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Rubik:wght@400;700&display=swap"
-        rel="stylesheet"
-      />
       <title>{title}</title>
     </Head>
   );
