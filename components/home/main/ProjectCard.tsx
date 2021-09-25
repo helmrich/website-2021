@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Project from '../../../types/Project';
 import styles from '../../../styles/ProjectCard.module.css';
 
@@ -8,7 +9,7 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
-    <Link href={`/project/${project.slug}`}>
+    <Link href={`/project/${project.slug}`} passHref={true}>
       <article className={styles.card}>
         <div className={styles.textContainer}>
           <h3 className={styles.title}>{project.frontmatter.title}</h3>
@@ -17,10 +18,12 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </h4>
         </div>
         <div className={styles.imageContainer}>
-          <img
+          <Image
             src={project.frontmatter.imagePath}
             alt={`${project.frontmatter.imagePath} screenshot in mockup`}
             className={styles.image}
+            layout="fill"
+            objectFit="cover"
           />
           <div className={styles.imageOverlay}></div>
         </div>
