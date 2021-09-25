@@ -14,14 +14,16 @@ const AboutSection = () => {
             bachelor’s degree in{' '}
             <a
               href="https://www.hdm-stuttgart.de/en/prospective_students/academic_programs/all_programs/steckbrief?sgang_ID=550033"
-              className="highlightedLink"
               target="_blank"
+              rel="noopener noreferrer"
+              className="highlightedLink"
             >
               Medieninformatik (Computer Science and Media)
             </a>{' '}
             <a
               href="https://www.hdm-stuttgart.de/en"
               target="_blank"
+              rel="noopener noreferrer"
               className="highlightedLink"
             >
               @HdM Stuttgart

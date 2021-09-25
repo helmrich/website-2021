@@ -9,6 +9,7 @@ const ContactSection = () => {
         <a
           href="https://twitter.com/tobias_helmrich"
           target="_blank"
+          rel="noopener noreferrer"
           className="highlightedLink"
         >
           Twitter
@@ -17,6 +18,7 @@ const ContactSection = () => {
         <a
           href="mailto:tobias.g.helmrich@gmail.com"
           target="_blank"
+          rel="noopener noreferrer"
           className="highlightedLink"
         >
           mail
