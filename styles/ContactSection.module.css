@@ -12,6 +12,7 @@
 .largeText {
   font-weight: 700;
   font-size: clamp(2rem, 2rem + 4vw, 4rem);
+  margin-bottom: 0.5rem;
 }
 
 .wave {
