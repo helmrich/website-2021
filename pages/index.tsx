@@ -7,6 +7,7 @@ import AboutSection from '../components/home/main/AboutSection';
 import WorkSection from '../components/home/main/WorkSection';
 import Project from '../types/Project';
 import ContactSection from '../components/home/main/ContactSection';
+import Footer from '../components/footer/Footer';
 
 interface HomeProps {
   projects: Project[];
@@ -23,7 +24,7 @@ const Home = ({ projects }: HomeProps) => {
         <ContactSection />
       </main>
 
-      <footer className={styles.footer}></footer>
+      <Footer />
     </>
   );
 };

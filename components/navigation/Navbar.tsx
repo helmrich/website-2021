@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Logo from '../Logo';
 import NavLink from './NavLink';
 import styles from '../../styles/Navbar.module.css';
 import { useState } from 'react';
@@ -8,13 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className={styles.nav}>
-      <Link href="/">
-        <a className={styles.logo}>
-          <span className={styles.logoBracket}>{'<'}</span>
-          <span>tobi</span>
-          <span className={styles.logoBracket}>{'/>'}</span>
-        </a>
-      </Link>
+      <Logo />
       <ul
         className={`${styles.linkList} ${!isMobileMenuOpen && styles.hidden}`}
       >

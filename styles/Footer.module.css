@@ -1,0 +1,28 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 50px;
+  background-color: var(--secondary-bg-color);
+}
+
+.information {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0;
+}
+
+.copyright,
+.imprint {
+  font-size: 0.75rem;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.imprint {
+  transition: all 0.25s;
+}
+
+.imprint:hover {
+  opacity: 1;
+}
