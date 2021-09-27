@@ -54,6 +54,11 @@
   padding-bottom: 150px;
 }
 
+.main h3 {
+  width: 100%;
+  text-align: left;
+}
+
 @media only screen and (min-width: 768px) {
   .headingContainer {
     padding-left: 50px;

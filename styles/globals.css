@@ -72,8 +72,6 @@ section h3 {
   font-size: clamp(1.75rem, 1.75rem + 2vw, 3.5rem);
   text-transform: uppercase;
   text-align: left;
-  width: 100%;
-  max-width: 1280px;
 }
 
 p {
