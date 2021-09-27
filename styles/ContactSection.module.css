@@ -11,27 +11,6 @@
 
 .largeText {
   font-weight: 700;
-  font-size: clamp(2rem, 2rem + 4vw, 4rem);
+  font-size: clamp(1.75rem, 1.75rem + 3vw, 4rem);
   margin-bottom: 0.5rem;
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.wave svg {
-  position: relative;
-  display: block;
-  width: calc(122% + 1.3px);
-  height: 117px;
-}
-
-.wave .shapeFill {
-  fill: #fdf6fa;
 }
