@@ -74,10 +74,6 @@ section h3 {
   text-align: left;
 }
 
-p {
-  margin-top: 1.5rem;
-}
-
 .highlighted {
   color: var(--secondary-fg-color);
 }
