@@ -12,7 +12,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <Link href={`/project/${project.slug}`} passHref={true}>
       <article className={styles.card}>
         <div className={styles.textContainer}>
-          <h3 className={styles.title}>{project.frontmatter.title}</h3>
+          <h3
+            className={styles.title}
+            style={{
+              color: project.frontmatter.colorHexcode
+                ? `#${project.frontmatter.colorHexcode}`
+                : 'var(--secondary-fg-color)',
+            }}
+          >
+            {project.frontmatter.title}
+          </h3>
           <h4 className={styles.description}>
             {project.frontmatter.description}
           </h4>
@@ -25,7 +34,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             layout="fill"
             objectFit="cover"
           />
-          <div className={styles.imageOverlay}></div>
+          <div
+            className={styles.imageOverlay}
+            style={{
+              backgroundColor: project.frontmatter.colorHexcode
+                ? `#${project.frontmatter.colorHexcode}`
+                : 'var(--secondary-fg-color)',
+            }}
+          ></div>
         </div>
         <div>
           {project.frontmatter.tags.map((tag) => {

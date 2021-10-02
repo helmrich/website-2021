@@ -7,4 +7,5 @@ export default interface Frontmatter {
   githubLinkUrl?: string;
   imagePath: string;
   detailImagePaths?: string[];
+  colorHexcode?: string;
 }
