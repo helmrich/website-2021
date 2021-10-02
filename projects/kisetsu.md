@@ -1,13 +1,11 @@
 ---
-title: 'consumat.io'
-description: 'Movie and Series Tracker Web App'
-tags: ['TypeScript', 'React', 'Tailwind CSS', 'Next.js', 'Apollo GraphQL']
-year: 2021
-linkUrl: 'https://consumat-io-frontend.vercel.app/'
-githubLinkUrl: 'https://github.com/alphahorizonio/consumat.io-frontend'
-imagePath: '/images/projects/consumat-io.jpg'
-detailImages:
-  ['/images/projects/consumat-io-1.jpg', '/images/projects/consumat-io-2.jpg']
+title: 'Kisetsu'
+description: 'Anime and Manga Tracking iOS Application'
+tags: ['iOS', 'Swift', 'REST']
+year: 2016
+githubLinkUrl: 'https://github.com/helmrich/Kisetsu'
+imagePath: '/images/projects/kisetsu-iphone-preview.jpeg'
+colorHexcode: '40b9fd'
 ---
 
 ### About
