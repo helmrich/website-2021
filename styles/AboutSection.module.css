@@ -31,42 +31,6 @@
   border-radius: 25px;
 }
 
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-/* @keyframes moveToRight {
-  from {
-    left: -20%;
-  }
-  to {
-    left: 0%;
-  }
-} */
-
-.wave svg {
-  position: relative;
-  display: block;
-  width: calc(115% + 1.3px);
-  height: 95px;
-  /* left: -20%;
-  animation-name: moveToRight;
-  animation-duration: 4s;
-  animation-delay: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  animation-direction: alternate-reverse; */
-}
-
-.wave .shapeFill {
-  fill: var(--secondary-bg-color);
-}
-
 @media only screen and (min-width: 768px) {
   .informationText {
     max-width: 60%;

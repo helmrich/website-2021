@@ -1,5 +1,6 @@
 import styles from '../../../styles/ContactSection.module.css';
-import FooterWave from '../../footer/FooterWave';
+import { Color } from '../../../types/Color';
+import Wave from '../../Wave';
 
 const ContactSection = () => {
   return (
@@ -26,7 +27,7 @@ const ContactSection = () => {
         </a>
         .
       </h4>
-      <FooterWave />
+      <Wave width={125} height={115} fillColor={Color.SecondaryBg} />
     </section>
   );
 };

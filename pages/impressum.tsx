@@ -1,6 +1,7 @@
 import Footer from '../components/footer/Footer';
-import FooterWave from '../components/footer/FooterWave';
+import Wave from '../components/Wave';
 import styles from '../styles/Impressum.module.css';
+import { Color } from '../types/Color';
 
 const Impressum = () => {
   return (
@@ -123,8 +124,7 @@ const Impressum = () => {
             </a>
           </p>
         </section>
-
-        <FooterWave />
+        <Wave width={125} height={115} fillColor={Color.SecondaryBg} />
       </main>
 
       <Footer />

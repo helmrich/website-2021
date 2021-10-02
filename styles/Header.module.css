@@ -17,6 +17,7 @@
 }
 
 .smallText {
+  /* margin-top: 0; */
   font-size: clamp(0.7rem, 0.7rem + 2vw, 2rem);
 }
 
@@ -27,27 +28,6 @@
 
 .jobText {
   display: inline-block;
-}
-
-.wave {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  transform: rotate(180deg);
-}
-
-.wave svg {
-  position: relative;
-  display: block;
-  width: calc(120% + 1.3px);
-  height: 90px;
-}
-
-.wave .shapeFill {
-  fill: var(--primary-bg-color);
 }
 
 @media only screen and (min-width: 768px) {
