@@ -49,7 +49,7 @@ export async function getStaticProps() {
   return {
     props: {
       projects: projects.sort((a, b) => {
-        return a.frontmatter.year - b.frontmatter.year;
+        return b.frontmatter.year - a.frontmatter.year;
       }),
     },
   };
