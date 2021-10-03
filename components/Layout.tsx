@@ -1,16 +1,19 @@
-import { ReactNode } from 'react';
+import { Dispatch, ReactNode } from 'react';
+import { Theme } from '../types/Theme';
 import HeadData from './HeadData';
 import Navbar from './navigation/Navbar';
 
 interface LayoutProps {
   children: ReactNode;
+  theme: Theme;
+  toggleTheme: () => void;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, theme, toggleTheme }: LayoutProps) => {
   return (
     <>
       <HeadData />
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <div>{children}</div>
     </>
   );
