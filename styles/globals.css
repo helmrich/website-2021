@@ -11,6 +11,8 @@
   --max-width: 1280px;
   --nav-height: 60px;
   --main-image-aspect-ratio: 1.636;
+  --normal-continuous-text-size: clamp(0.75rem, 0.75rem + 1vw, 1.1rem);
+  --normal-continuous-text-line-height: clamp(1.2rem, 1.2rem + 1vw, 1.55rem);
 }
 
 * {

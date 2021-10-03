@@ -20,8 +20,8 @@
 }
 
 .furtherInformationText {
-  font-size: clamp(0.75rem, 0.75rem + 1vw, 1.1rem);
-  line-height: clamp(1.2rem, 1.2rem + 1vw, 1.55rem);
+  font-size: var(--normal-continuous-text-size);
+  line-height: var(--normal-continuous-text-line-height);
 }
 
 .placeholderBox {

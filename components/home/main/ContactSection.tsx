@@ -4,8 +4,11 @@ import Wave from '../../Wave';
 
 const ContactSection = () => {
   return (
-    <section id="contact">
+    <section id="contact" className={styles.contact}>
       <h3 className={styles.largeText}>Want to work with me?</h3>
+      <h4 className={styles.smallText}>
+        I'm currently looking for an internship as a Front-End engineer.
+      </h4>
       <h4 className={styles.smallText}>
         Get in touch with me on{' '}
         <a

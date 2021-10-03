@@ -1,16 +1,20 @@
-.smallText,
-.largeText {
-  text-align: center;
-  width: 100%;
+.contact {
+  display: flex;
+  gap: 0.75rem;
 }
 
+.largeText,
 .smallText {
-  font-weight: 400;
-  font-size: clamp(0.75rem, 0.75rem + 2vw, 2rem);
+  text-align: center;
+  width: 100%;
 }
 
 .largeText {
   font-weight: 700;
   font-size: clamp(1.75rem, 1.75rem + 3vw, 4rem);
-  margin-bottom: 0.5rem;
+}
+
+.smallText {
+  font-weight: 400;
+  font-size: clamp(0.75rem, 0.75rem + 2vw, 2rem);
 }
