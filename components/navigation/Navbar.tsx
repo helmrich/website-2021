@@ -56,11 +56,15 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+      <button
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        aria-label="Open the menu"
+      >
         <div
           className={`${styles.hamburgerIcon} ${
             isMobileMenuOpen && styles.open
           }`}
+          aria-hidden="true"
         >
           <span></span>
           <span></span>
