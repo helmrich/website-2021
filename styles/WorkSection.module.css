@@ -12,6 +12,7 @@
 .projects {
   display: grid;
   grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
   gap: 2rem;
   width: 100%;
   max-width: var(--max-width);

@@ -26,7 +26,7 @@
   background-color: var(--primary-bg-color);
   font-size: 1.25rem;
   z-index: 10;
-  transition: all 0.25s;
+  /* transition: all 0.25s; */
 }
 
 .link {
@@ -105,10 +105,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .nav {
-    padding: 0 100px;
-  }
-
   .linkList {
     display: flex;
     position: relative;

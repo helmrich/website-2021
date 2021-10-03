@@ -1,6 +1,8 @@
 .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: calc(25px + var(--nav-height)) 0 150px 0;
-  max-width: var(--max-width);
   position: relative;
 }
 
@@ -8,15 +10,21 @@
   align-items: flex-start;
   padding-top: 25px;
   padding-bottom: 25px;
+  width: 100%;
+  max-width: var(--max-width);
 }
 
 .main section p {
   margin: 0;
+  width: 100%;
 }
 
 .main h1 {
   padding-left: 25px;
   padding-right: 25px;
+  display: flex;
+  width: 100%;
+  max-width: var(--max-width);
 }
 
 .main h2 {
@@ -48,5 +56,16 @@
   .main h1 {
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  .main section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .main {
+    align-items: center;
   }
 }

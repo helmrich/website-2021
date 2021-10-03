@@ -4,6 +4,7 @@
   align-items: flex-end;
   background-color: var(--primary-bg-color);
   border-radius: var(--border-radius);
+  height: 100%;
 }
 
 .card:hover {
@@ -36,6 +37,7 @@
   border-radius: 0.25rem 0 var(--border-radius) 0;
   overflow: hidden;
   width: 85%;
+  height: 100%;
   aspect-ratio: var(--main-image-aspect-ratio);
 }
 

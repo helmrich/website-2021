@@ -126,7 +126,6 @@ const Impressum = () => {
         </section>
         <Wave width={125} height={115} fillColor={Color.SecondaryBg} />
       </main>
-
       <Footer />
     </>
   );
