@@ -27,12 +27,10 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </h4>
         </div>
         <div className={styles.imageContainer}>
-          <Image
+          <img
             src={project.frontmatter.imagePath}
             alt={`${project.frontmatter.imagePath} screenshot in mockup`}
             className={styles.image}
-            layout="fill"
-            objectFit="cover"
           />
           <div
             className={styles.imageOverlay}
