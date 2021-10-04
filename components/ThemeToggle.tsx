@@ -1,5 +1,15 @@
-import { useTheme } from 'styled-components';
+import styled from 'styled-components';
 import { Theme } from '../types/Theme';
+
+const Button = styled.button`
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      opacity: 1;
+    }
+  }
+`;
 
 interface ThemeToggleProps {
   theme: Theme;
@@ -8,7 +18,7 @@ interface ThemeToggleProps {
 
 const ThemeToggle = ({ theme, toggleTheme }: ThemeToggleProps) => {
   return (
-    <button onClick={() => toggleTheme()}>
+    <Button onClick={() => toggleTheme()}>
       {theme === Theme.Light ? (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +57,7 @@ const ThemeToggle = ({ theme, toggleTheme }: ThemeToggleProps) => {
           <line x1="9.7" y1="17" x2="14.3" y2="17" />
         </svg>
       )}
-    </button>
+    </Button>
   );
 };
 

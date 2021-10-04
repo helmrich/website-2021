@@ -42,10 +42,16 @@ const HeadingContainer = styled.div`
   }
 `;
 
-const Main = styled.main`
+interface MainProps {
+  colorHexcode?: string;
+}
+
+const Main = styled.main<MainProps>`
+  display: flex;
   position: relative;
 
   h3 {
+    ${({ colorHexcode }) => colorHexcode && `color: #${colorHexcode}`};
     width: 100%;
     text-align: left;
   }
@@ -61,6 +67,14 @@ const Main = styled.main`
     font-size: var(--normal-continuous-text-size);
     line-height: var(--normal-continuous-text-line-height);
   }
+
+  @media only screen and (min-width: 1280px) {
+    justify-content: center;
+  }
+`;
+
+const ProjectDetails = styled.section`
+  max-width: var(--max-width);
 `;
 
 interface ProjectPageProps {
@@ -86,18 +100,23 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
         }}
       >
         <HeadingContainer>
-          <h1>{project.frontmatter.title}</h1>
-          <p>{project.frontmatter.description}</p>
+          <h1 style={{ color: '#ffffff' }}>{project.frontmatter.title}</h1>
+          <p style={{ color: '#ffffff' }}>{project.frontmatter.description}</p>
         </HeadingContainer>
         <Wave width={175} height={70} fillColor={Color.PrimaryBg} />
       </Header>
-      <Main>
-        <section
+      <Main colorHexcode={project.frontmatter.colorHexcode}>
+        <ProjectDetails
           dangerouslySetInnerHTML={{
             __html: marked(content),
           }}
-        ></section>
-        <Wave width={125} height={115} fillColor={Color.SecondaryBg} />
+        ></ProjectDetails>
+        <Wave
+          width={150}
+          height={100}
+          fillColor={Color.SecondaryBg}
+          inverted={true}
+        />
       </Main>
       <Footer />
     </>

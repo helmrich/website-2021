@@ -49,7 +49,12 @@ const ContactSection = () => {
         </a>
         .
       </SmallText>
-      <Wave width={125} height={115} fillColor={Color.SecondaryBg} />
+      <Wave
+        width={150}
+        height={100}
+        fillColor={Color.SecondaryBg}
+        inverted={true}
+      />
     </MainSection>
   );
 };

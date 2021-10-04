@@ -41,12 +41,7 @@ const WorkSection = ({ projects }: WorkSectionProps) => {
           );
         })}
       </ProjectsSection>
-      <Wave
-        width={150}
-        height={80}
-        fillColor={Color.PrimaryBg}
-        inverted={true}
-      />
+      <Wave width={150} height={80} fillColor={Color.PrimaryBg} />
     </MainSection>
   );
 };
