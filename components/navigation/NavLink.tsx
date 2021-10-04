@@ -1,5 +1,14 @@
+import styled from 'styled-components';
 import Link from 'next/link';
-import styles from '../../styles/NavLink.module.css';
+
+const InnerLink = styled.a`
+  opacity: 0.75;
+  transition: all 0.25s;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
 
 interface NavLinkProps {
   title: string;
@@ -8,8 +17,8 @@ interface NavLinkProps {
 
 const NavLink = ({ title, href }: NavLinkProps) => {
   return (
-    <Link href={href}>
-      <a className={styles.link}>{title}</a>
+    <Link href={href} passHref>
+      <InnerLink>{title}</InnerLink>
     </Link>
   );
 };

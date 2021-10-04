@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import styles from '../styles/Home.module.css';
 import Header from '../components/home/header/Header';
 import AboutSection from '../components/home/main/AboutSection';
 import WorkSection from '../components/home/main/WorkSection';
@@ -18,7 +17,7 @@ const Home = ({ projects }: HomeProps) => {
     <>
       <Header />
 
-      <main className={styles.main}>
+      <main>
         <AboutSection />
         <WorkSection projects={projects} />
         <ContactSection />

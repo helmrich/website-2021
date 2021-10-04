@@ -1,4 +1,4 @@
-import styles from '../../styles/ProjectPage.module.css';
+import styled from 'styled-components';
 import HeadData from '../../components/HeadData';
 import Project from '../../types/Project';
 import fs from 'fs';
@@ -9,6 +9,59 @@ import Frontmatter from '../../types/Frontmatter';
 import Footer from '../../components/footer/Footer';
 import Wave from '../../components/Wave';
 import { Color } from '../../types/Color';
+
+const Header = styled.header`
+  background-color: var(--secondary-bg-color);
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding-top: var(--nav-height);
+`;
+
+const HeadingContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 25px 100px 25px;
+  color: var(--primary-bg-color);
+
+  h1 {
+    font-size: clamp(2rem, 2rem + 2vw, 5rem);
+    text-align: left;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+`;
+
+const Main = styled.main`
+  position: relative;
+
+  h3 {
+    width: 100%;
+    text-align: left;
+  }
+
+  section {
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    gap: 1rem;
+  }
+
+  p {
+    font-size: var(--normal-continuous-text-size);
+    line-height: var(--normal-continuous-text-line-height);
+  }
+`;
 
 interface ProjectPageProps {
   project: Project;
@@ -22,8 +75,8 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
 
   return (
     <>
-      <HeadData title={`Tobias Helmrich | ${project.frontmatter.title}`} />
-      <header
+      <HeadData title={`${project.frontmatter.title} | Tobias Helmrich`} />
+      <Header
         // 'bf' is the hexadecimal equivalent of 0.75 for the alpha channel (see https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4)
         style={{
           backgroundImage: `linear-gradient(${colorHexcode + 'bf'}, ${
@@ -31,22 +84,21 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
           }), url(${project.frontmatter.imagePath})`,
           backgroundSize: 'cover',
         }}
-        className={styles.header}
       >
-        <div className={styles.headingContainer}>
+        <HeadingContainer>
           <h1>{project.frontmatter.title}</h1>
           <p>{project.frontmatter.description}</p>
-        </div>
+        </HeadingContainer>
         <Wave width={175} height={70} fillColor={Color.PrimaryBg} />
-      </header>
-      <main className={styles.main}>
+      </Header>
+      <Main>
         <section
           dangerouslySetInnerHTML={{
             __html: marked(content),
           }}
         ></section>
         <Wave width={125} height={115} fillColor={Color.SecondaryBg} />
-      </main>
+      </Main>
       <Footer />
     </>
   );
