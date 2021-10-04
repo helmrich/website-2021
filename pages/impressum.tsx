@@ -1,13 +1,72 @@
+import styled from 'styled-components';
 import Footer from '../components/footer/Footer';
 import Wave from '../components/Wave';
-import styles from '../styles/Impressum.module.css';
 import { Color } from '../types/Color';
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(25px + var(--nav-height)) 0 150px 0;
+  position: relative;
+
+  h1 {
+    padding-left: 25px;
+    padding-right: 25px;
+    display: flex;
+    width: 100%;
+    max-width: var(--max-width);
+
+    @media only screen and (min-width: 768px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);
+    color: var(--primary-fg-color);
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: clamp(1rem, 1rem + 2vw, 1.75rem);
+    color: var(--primary-fg-color);
+    margin-bottom: 0.25rem;
+  }
+
+  section {
+    align-items: flex-start;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+    max-width: var(--max-width);
+
+    p {
+      margin: 0;
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+  }
+
+  article p {
+    margin-bottom: 2rem;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    align-items: center;
+  }
+`;
 
 const Impressum = () => {
   return (
     <>
-      <main className={styles.main}>
-        <h1 className={styles.mainHeading}>Impressum</h1>
+      <Main>
+        <h1>Impressum</h1>
         <section>
           <h2>Angaben gemäß § 5 TMG</h2>
           <p>Tobias Helmrich</p>
@@ -124,8 +183,13 @@ const Impressum = () => {
             </a>
           </p>
         </section>
-        <Wave width={125} height={115} fillColor={Color.SecondaryBg} />
-      </main>
+        <Wave
+          width={150}
+          height={100}
+          fillColor={Color.SecondaryBg}
+          inverted={true}
+        />
+      </Main>
       <Footer />
     </>
   );

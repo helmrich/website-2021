@@ -1,6 +1,52 @@
-import styles from '../styles/Wave.module.css';
+import styled, { keyframes, css } from 'styled-components';
 import { Color } from '../types/Color';
 // import useIsScrolling from '../hooks/useIsScrolling';
+
+interface MainProps {
+  inverted: boolean;
+  animated: boolean;
+}
+
+const moveToRight = keyframes`
+  from {
+    left: -50%;
+  }
+  to {
+    left: 0%;
+  }
+`;
+
+const Main = styled.div<MainProps>`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+
+  svg {
+    position: relative;
+    display: block;
+
+    ${({ animated }) =>
+      animated &&
+      css`
+        animation-name: ${moveToRight};
+        animation-duration: 4s;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate-reverse;
+      `}
+  }
+
+  ${({ inverted }) =>
+    inverted &&
+    `
+    transform: scaleY(-1);
+  `}
+`;
 
 interface WaveProps {
   height: number;
@@ -13,7 +59,9 @@ const Wave = ({ height, width, fillColor, inverted = false }: WaveProps) => {
   // const isScrolling = useIsScrolling();
 
   return (
-    <div className={`${styles.wave} ${inverted && styles.inverted}`}>
+    // TODO: Implement animation logic, for the time being
+    // just setting this to false
+    <Main inverted={inverted} animated={false}>
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +83,7 @@ const Wave = ({ height, width, fillColor, inverted = false }: WaveProps) => {
           }}
         ></path>
       </svg>
-    </div>
+    </Main>
   );
 };
 
