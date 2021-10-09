@@ -6,7 +6,7 @@ import {
 import type { AppProps } from 'next/app';
 import Layout from '../components/Layout';
 import { Theme } from '../types/Theme';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const defaultThemeValues = {
   borderRadius: '1rem',
@@ -128,6 +128,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .highlightedLink {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     transition: all 0.25s;
     border-bottom: 3px solid var(--secondary-fg-color);
   }
@@ -166,6 +168,15 @@ function MyApp({ Component, pageProps }: AppProps) {
   const toggleTheme = () => {
     theme === Theme.Light ? setTheme(Theme.Dark) : setTheme(Theme.Light);
   };
+
+  useEffect(() => {
+    // Check user's preferred color scheme (dark/light) and set theme accordingly
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme(Theme.Dark);
+    } else {
+      setTheme(Theme.Light);
+    }
+  }, []);
 
   return (
     <>
