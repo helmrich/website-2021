@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Footer from '../components/footer/Footer';
+import HighlightedLink from '../components/HighlightedLink';
 import Wave from '../components/Wave';
 import { Color } from '../types/Color';
 
@@ -11,6 +12,7 @@ const Main = styled.main`
   position: relative;
 
   h1 {
+    font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);
     padding-left: 25px;
     padding-right: 25px;
     display: flex;
@@ -24,13 +26,13 @@ const Main = styled.main`
   }
 
   h2 {
-    font-size: clamp(1.5rem, 1.5rem + 2vw, 3rem);
+    font-size: clamp(1.25rem, 1.25rem + 1vw, 2rem);
     color: var(--primary-fg-color);
     margin-bottom: 0.5rem;
   }
 
   h3 {
-    font-size: clamp(1rem, 1rem + 2vw, 1.75rem);
+    font-size: clamp(1rem, 1rem + 1vw, 1.5rem);
     color: var(--primary-fg-color);
     margin-bottom: 0.25rem;
   }
@@ -62,6 +64,15 @@ const Main = styled.main`
   }
 `;
 
+const ExternalLink = styled.a`
+  opacity: 0.75;
+  transition: all 0.25s;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
 const Impressum = () => {
   return (
     <>
@@ -78,12 +89,11 @@ const Impressum = () => {
           <p>Telefon: 0174-6893039</p>
           <p>
             E-Mail:{' '}
-            <a
+            <HighlightedLink
+              title="tobias.g.helmrich@gmail.com"
               href="mailto:tobias.g.helmrich@gmail.com"
-              className="highlightedLink"
-            >
-              tobias.g.helmrich@gmail.com
-            </a>
+              opensNewTab={true}
+            />
           </p>
         </section>
 
@@ -167,20 +177,16 @@ const Impressum = () => {
         <section>
           <p>
             Website Impressum erstellt durch{' '}
-            <a
-              href="https://www.impressum-generator.de"
-              className="highlightedLink"
-            >
+            <ExternalLink href="https://www.impressum-generator.de">
               impressum-generator.de
-            </a>{' '}
+            </ExternalLink>{' '}
             von der{' '}
-            <a
+            <ExternalLink
               href="https://www.kanzlei-hasselbach.de/"
               rel="nofollow"
-              className="highlightedLink"
             >
               Kanzlei Hasselbach
-            </a>
+            </ExternalLink>
           </p>
         </section>
         <Wave
