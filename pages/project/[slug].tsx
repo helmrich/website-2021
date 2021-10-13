@@ -14,7 +14,7 @@ const Header = styled.header`
   background-color: var(--secondary-bg-color);
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 75vh;
   padding-top: var(--nav-height);
 `;
 
@@ -48,6 +48,7 @@ interface MainProps {
 
 const Main = styled.main<MainProps>`
   display: flex;
+  flex-direction: column;
   position: relative;
 
   h3 {
@@ -59,7 +60,6 @@ const Main = styled.main<MainProps>`
   section {
     display: flex;
     padding-top: 50px;
-    padding-bottom: 150px;
     gap: 1rem;
   }
 
@@ -73,8 +73,66 @@ const Main = styled.main<MainProps>`
   }
 `;
 
-const ProjectDetails = styled.section`
+interface ProjectDetailsProps {
+  borderColor?: string;
+  hoverColor?: string;
+}
+
+const ProjectDetails = styled.section<ProjectDetailsProps>`
   max-width: var(--max-width);
+  padding-bottom: 0;
+
+  a {
+    transition: all 0.25s;
+    border-bottom: 3px solid
+      ${({ borderColor }) =>
+        borderColor ? `#${borderColor}` : 'var(--secondary-fg-color)'};
+
+    &:hover {
+      color: ${({ hoverColor }) =>
+        hoverColor ? `#${hoverColor}` : 'var(--primary-bg-color)'};
+      background-color: ${({ borderColor }) =>
+        borderColor ? `#${borderColor}` : 'var(--secondary-fg-color)'};
+    }
+  }
+`;
+
+const Links = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-bottom: 150px;
+`;
+
+interface ButtonProps {
+  backgroundColor?: string;
+  color?: string;
+}
+
+const Button = styled.a<ButtonProps>`
+  padding: 0.75rem 2rem;
+  font-family: var(--main-font);
+  font-weight: 700;
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ? `#${backgroundColor}` : 'var(--primary-bg-color)'};
+  color: ${({ color }) => (color ? `#${color}` : 'var(--secondary-fg-color)')};
+  border-radius: var(--border-radius);
+  border: 4px solid
+    ${({ color }) => (color ? `#${color}` : 'var(--secondary-fg-color)')};
+  box-shadow: var(--box-shadow);
+  transition: all 0.25s;
+
+  &:hover {
+    background-color: ${({ color }) =>
+      color ? `#${color}` : 'var(--secondary-fg-color)'};
+    color: ${({ backgroundColor }) =>
+      backgroundColor ? `#${backgroundColor}` : 'var(--primary-bg-color)'};
+    box-shadow: var(--box-shadow-hover);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
 `;
 
 interface ProjectPageProps {
@@ -110,7 +168,30 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
           dangerouslySetInnerHTML={{
             __html: marked(content),
           }}
+          borderColor={project.frontmatter.colorHexcode}
         ></ProjectDetails>
+        <Links>
+          {project.frontmatter.githubLinkUrl && (
+            <Button
+              href={project.frontmatter.githubLinkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              color={project.frontmatter.colorHexcode}
+            >
+              GitHub
+            </Button>
+          )}
+          {project.frontmatter.linkUrl && (
+            <Button
+              href={project.frontmatter.linkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              color={project.frontmatter.colorHexcode}
+            >
+              See Project
+            </Button>
+          )}
+        </Links>
         <Wave
           width={150}
           height={100}

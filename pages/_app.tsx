@@ -14,6 +14,14 @@ const defaultThemeValues = {
   navHeight: '60px',
   normalContinuousTextSize: 'clamp(0.75rem, 0.75rem + 1vw, 1.1rem)',
   normalContinuousTextLineHeight: 'clamp(1.2rem, 1.2rem + 1vw, 1.55rem)',
+
+  shadows: {
+    primary:
+      '0.2px 0.3px 0.3px rgba(0, 0, 0, 0.017), 0.4px 0.8px 0.8px rgba(0, 0, 0, 0.024), 0.8px 1.5px 1.5px rgba(0, 0, 0, 0.03), 1.3px 2.7px 2.7px rgba(0, 0, 0, 0.036), 2.5px 5px 5px rgba(0, 0, 0, 0.043), 6px 12px 12px rgba(0, 0, 0, 0.06)',
+    primaryHover:
+      '0.3px 0.6px 0.6px rgba(0, 0, 0, 0.022), 0.7px 1.3px 1.3px rgba(0, 0, 0, 0.032), 1.3px 2.5px 2.5px rgba(0, 0, 0, 0.04), 2.2px 4.5px 4.5px rgba(0, 0, 0, 0.048), 4.2px 8.4px 8.4px rgba(0, 0, 0, 0.058), 10px 20px 20px rgba(0, 0, 0, 0.08)',
+  },
+
   fonts: {
     primary: "'Rubik', sans-serif",
     monospace: "'IBM Plex Mono', monospace",
@@ -35,7 +43,7 @@ export const darkTheme: DefaultTheme = {
   ...defaultThemeValues,
 
   colors: {
-    // TODO: Colors only provisional
+    // TODO: Colors work in progress
     primaryBg: '#000000',
     secondaryBg: '#222222',
     primaryFg: '#ffffff',
@@ -60,6 +68,8 @@ export const GlobalStyle = createGlobalStyle`
       theme.normalContinuousTextSize};
     --normal-continuous-text-line-height: ${({ theme }) =>
       theme.normalContinuousTextLineHeight};
+      --box-shadow: ${({ theme }) => theme.shadows.primary};
+    --box-shadow-hover: ${({ theme }) => theme.shadows.primaryHover};
   }
 
   * {
@@ -125,18 +135,6 @@ export const GlobalStyle = createGlobalStyle`
 
   .highlighted {
     color: var(--secondary-fg-color);
-  }
-
-  .highlightedLink {
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    transition: all 0.25s;
-    border-bottom: 3px solid var(--secondary-fg-color);
-  }
-
-  .highlightedLink:hover {
-    color: var(--primary-bg-color);
-    background-color: var(--secondary-fg-color);
   }
 
   ::selection {

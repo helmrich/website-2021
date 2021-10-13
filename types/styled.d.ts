@@ -9,6 +9,11 @@ declare module 'styled-components' {
     normalContinuousTextSize: string;
     normalContinuousTextLineHeight: string;
 
+    shadows: {
+      primary: string;
+      primaryHover: string;
+    };
+
     colors: {
       primaryBg: string;
       secondaryBg: string;

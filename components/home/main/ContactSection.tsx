@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../../types/Color';
+import HighlightedLink from '../../HighlightedLink';
 import Wave from '../../Wave';
 
 const MainSection = styled.section`
@@ -30,23 +31,17 @@ const ContactSection = () => {
       </SmallText>
       <SmallText>
         Get in touch with me on{' '}
-        <a
+        <HighlightedLink
+          title="Twitter"
           href="https://twitter.com/tobias_helmrich"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="highlightedLink"
-        >
-          Twitter
-        </a>{' '}
+          opensNewTab={true}
+        />{' '}
         or send me a{' '}
-        <a
+        <HighlightedLink
+          title="mail"
           href="mailto:tobias.g.helmrich@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="highlightedLink"
-        >
-          mail
-        </a>
+          opensNewTab={true}
+        />
         .
       </SmallText>
       <Wave

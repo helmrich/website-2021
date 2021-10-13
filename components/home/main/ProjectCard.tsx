@@ -9,9 +9,21 @@ const Card = styled.article`
   background-color: var(--primary-bg-color);
   border-radius: var(--border-radius);
   height: 100%;
+  transition: box-shadow 0.25s, transform 0.25s;
+
+  box-shadow: var(--box-shadow);
 
   &:hover {
     cursor: pointer;
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-10px);
+    transform: translateX(-5px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0px);
+    transform: translateX(0px);
   }
 `;
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Color } from '../../../types/Color';
+import HighlightedLink from '../../HighlightedLink';
 import Wave from '../../Wave';
 
 const ContentWrapper = styled.div`
@@ -33,7 +34,7 @@ const Information = styled.article`
   gap: 1.5rem;
 
   @media only screen and (min-width: 768px) {
-    max-width: 60%;
+    /* max-width: 60%; */
   }
 `;
 
@@ -54,28 +55,22 @@ const AboutSection = () => {
       <h2>About Me</h2>
 
       <ContentWrapper>
-        <PlaceholderBox></PlaceholderBox>
+        {/* <PlaceholderBox></PlaceholderBox> */}
         <Information>
           <Basic>
             Nice to meet you! I’m Tobias Helmrich, creative front-end developer
             and student currently in my second year of studies towards a
             bachelor’s degree in{' '}
-            <a
+            <HighlightedLink
+              title="Medieninformatik (Computer Science and Media)"
               href="https://www.hdm-stuttgart.de/en/prospective_students/academic_programs/all_programs/steckbrief?sgang_ID=550033"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="highlightedLink"
-            >
-              Medieninformatik (Computer Science and Media)
-            </a>{' '}
-            <a
+              opensNewTab={true}
+            />{' '}
+            <HighlightedLink
+              title="@HdM Stuttgart"
               href="https://www.hdm-stuttgart.de/en"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="highlightedLink"
-            >
-              @HdM Stuttgart
-            </a>
+              opensNewTab={true}
+            />
             .
           </Basic>
           <Further>
