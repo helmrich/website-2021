@@ -11,8 +11,4 @@ colorHexcode: '3e87f7'
 
 ### About
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
+VanillaCalc is a simple calculator written in vanilla JavaScript which I built during the [Foundations path](https://www.theodinproject.com/paths/foundations/courses/foundations) of [The Odin Project](https://www.theodinproject.com/home).

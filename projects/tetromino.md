@@ -11,9 +11,5 @@ colorHexcode: '282d38'
 
 ### About
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
+Tetromino is a Tetris-like game written in Java with JavaFX I built with one fellow student during our 2nd semester.
 

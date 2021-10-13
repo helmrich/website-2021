@@ -10,8 +10,6 @@ colorHexcode: '40b9fd'
 
 ### About
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
+Kisetsu was the final project of my iOS Nanodegree at Udacity. It was an Anime and Manga tracking app for iOS written in Swift 3 that used the [AniList](https://anilist.co/) REST API. As I'm a huge Anime fan it was a blast writing this app.
 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos praesentium saepe ad iste voluptatem ipsum exercitationem vel velit tempora alias omnis quo, provident tenetur autem ut nulla. Aperiam, illum reprehenderit?
+However, when the AniList API was migrated to GraphQL I heavy-heartedly decided to discontinue the app as I wanted to focus on my studies full-time at that time.
