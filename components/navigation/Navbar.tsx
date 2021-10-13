@@ -15,7 +15,7 @@ const Navigation = styled.nav`
   justify-content: space-between;
   align-items: center;
   height: var(--nav-height);
-  padding: 0 50px;
+  padding: 0 25px;
   background-color: var(--primary-bg-color);
 `;
 
