@@ -101,16 +101,22 @@ interface TagProps {
 }
 
 const Tags = styled.section<TagProps>`
-  display: flex;
-  align-items: flex-start;
   width: 100%;
   max-width: var(--max-width);
   padding-bottom: 0;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
 
   li {
     display: inline;
     padding: 0.5rem 1rem;
     margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
     background-color: ${({ backgroundColor }) =>
       backgroundColor ? `#${backgroundColor}` : 'var(--secondary-fg-color)'};
     color: ${({ color }) => (color ? `#${color}` : 'var(--primary-bg-color)')};
