@@ -6,8 +6,7 @@ year: 2021
 linkUrl: 'https://consumat-io-frontend.vercel.app/'
 githubLinkUrl: 'https://github.com/alphahorizonio/consumat.io-frontend'
 imagePath: '/images/projects/consumat-io.jpg'
-detailImages:
-  ['/images/projects/consumat-io-1.jpg', '/images/projects/consumat-io-2.jpg']
+colorHexcode: 'f59e0b'
 ---
 
 ### About
