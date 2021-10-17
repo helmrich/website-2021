@@ -6,6 +6,13 @@ This is my new website written in TypeScript and built with React and [Next.js](
 
 I actually planned to make the site feel more "alive" right from the start by using the awesome [three.js](https://threejs.org/) library and adding 3D models, backgrounds, etc. to add some motion and visual candy but unfortunately I haven't progressed as far on my three.js learning journey as I planned yet and can't create 3D models I'm actually proud of using, which is why I'm going to add this later on, so stay tuned! 😁
 
+## TODOs
+
+These are some of the things I want to improve and work on in the foreseeable future:
+
+* [ ] Add 3D models and backgrounds
+* [ ] Improve dark mode
+
 ## Bugs
 
 If you find bugs (and I *know* there are still plenty 🥲), accessibility issues or any other problem, I would really appreciate it if you just let me know by reaching out to me or opening an issue.
