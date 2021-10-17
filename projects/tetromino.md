@@ -3,8 +3,7 @@ title: 'Tetromino'
 description: 'Tetris-like Game'
 tags: ['Java', 'JavaFX']
 year: 2020
-linkUrl: 'https://helmrich.github.io/Etch-a-Sketch/'
-githubLinkUrl: 'https://github.com/helmrich/Etch-a-Sketch'
+githubLinkUrl: 'https://github.com/helmrich/tetromino'
 imagePath: '/images/projects/tetromino.jpg'
 colorHexcode: '282d38'
 ---
