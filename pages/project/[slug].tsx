@@ -95,6 +95,29 @@ const ProjectDetails = styled.section<ProjectDetailsProps>`
   }
 `;
 
+interface TagProps {
+  backgroundColor?: string;
+  color?: string;
+}
+
+const Tags = styled.section<TagProps>`
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: var(--max-width);
+  padding-bottom: 0;
+
+  li {
+    display: inline;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    background-color: ${({ backgroundColor }) =>
+      backgroundColor ? `#${backgroundColor}` : 'var(--secondary-fg-color)'};
+    color: ${({ color }) => (color ? `#${color}` : 'var(--primary-bg-color)')};
+    border-radius: var(--border-radius);
+  }
+`;
+
 const Links = styled.section`
   display: flex;
   flex-direction: column;
@@ -174,6 +197,13 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
           }}
           borderColor={project.frontmatter.colorHexcode}
         ></ProjectDetails>
+        <Tags backgroundColor={project.frontmatter.colorHexcode}>
+          <ul>
+            {project.frontmatter.tags.map((tag, index) => {
+              return <li key={index}>{tag}</li>;
+            })}
+          </ul>
+        </Tags>
         <Links>
           {project.frontmatter.githubLinkUrl && (
             <Button
