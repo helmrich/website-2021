@@ -1,6 +1,5 @@
 import styled, { keyframes, css } from 'styled-components';
 import { Color } from '../types/Color';
-// import useIsScrolling from '../hooks/useIsScrolling';
 
 interface MainProps {
   inverted: boolean;
@@ -56,8 +55,6 @@ interface WaveProps {
 }
 
 const Wave = ({ height, width, fillColor, inverted = false }: WaveProps) => {
-  // const isScrolling = useIsScrolling();
-
   return (
     // TODO: Implement animation logic, for the time being
     // just setting this to false
