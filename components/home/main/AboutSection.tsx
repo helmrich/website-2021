@@ -103,8 +103,9 @@ const AboutSection = () => {
             technologies. Currently I’m focusing on learning and building
             websites in TypeScript using React with Next.js while always open to
             learning and exploring new languages, frameworks and tools to create
-            even better products. Besides that I’m interested in 3D modeling
-            using Blender and designing user interfaces in Figma.
+            even better products. Besides that I really want to get into 3D
+            modeling using Blender, designing user interfaces in Figma and
+            creating 3D web experiences using three.js.
           </Further>
         </Information>
       </ContentWrapper>
