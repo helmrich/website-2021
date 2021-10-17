@@ -23,7 +23,6 @@ const HeadingContainer = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  max-width: var(--max-width);
   padding: 0 25px 100px 25px;
   color: var(--primary-bg-color);
 
@@ -68,10 +67,6 @@ const Main = styled.main<MainProps>`
     font-size: var(--normal-continuous-text-size);
     line-height: var(--normal-continuous-text-line-height);
   }
-
-  @media only screen and (min-width: 1280px) {
-    justify-content: center;
-  }
 `;
 
 interface ProjectDetailsProps {
@@ -80,8 +75,10 @@ interface ProjectDetailsProps {
 }
 
 const ProjectDetails = styled.section<ProjectDetailsProps>`
-  max-width: var(--max-width);
   padding-bottom: 0;
+  width: 100%;
+  max-width: var(--max-width);
+  align-items: flex-start;
 
   a {
     transition: all 0.25s;
@@ -103,8 +100,8 @@ const Links = styled.section`
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  max-width: var(--max-width);
   padding-bottom: 150px;
+  max-width: var(--max-width);
 
   @media only screen and (min-width: 360px) {
     flex-direction: row;
