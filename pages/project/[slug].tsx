@@ -102,7 +102,7 @@ interface TagProps {
 
 const Tags = styled.section<TagProps>`
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   max-width: var(--max-width);
   padding-bottom: 0;
