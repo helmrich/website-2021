@@ -165,13 +165,25 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
       <Logo />
       <LinkList isHidden={!isMobileMenuOpen}>
         <li>
-          <NavLink title="About" href="/#about" />
+          <NavLink
+            title="About"
+            href="/#about"
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
         </li>
         <li>
-          <NavLink title="Work" href="/#work" />
+          <NavLink
+            title="Work"
+            href="/#work"
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
         </li>
         <li>
-          <NavLink title="Contact" href="/#contact" />
+          <NavLink
+            title="Contact"
+            href="/#contact"
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+          />
         </li>
         <Icon>
           <Link

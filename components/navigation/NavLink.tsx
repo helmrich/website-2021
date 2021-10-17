@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Link from 'next/link';
+import { MouseEventHandler } from 'react';
 
 const InnerLink = styled.a`
   opacity: 0.75;
@@ -13,12 +14,17 @@ const InnerLink = styled.a`
 interface NavLinkProps {
   title: string;
   href: string;
+  setIsMobileMenuOpen?: (isMobileMenuOpen: boolean) => void;
 }
 
-const NavLink = ({ title, href }: NavLinkProps) => {
+const NavLink = ({ title, href, setIsMobileMenuOpen }: NavLinkProps) => {
+  const innerLinkProps = {
+    ...(setIsMobileMenuOpen && { onClick: () => setIsMobileMenuOpen(false) }),
+  };
+
   return (
     <Link href={href} passHref>
-      <InnerLink>{title}</InnerLink>
+      <InnerLink {...innerLinkProps}>{title}</InnerLink>
     </Link>
   );
 };
