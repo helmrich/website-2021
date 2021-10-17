@@ -12,6 +12,7 @@ These are some of the things I want to improve and work on in the foreseeable fu
 
 * [ ] Add 3D models and backgrounds
 * [ ] Improve dark mode
+* [ ] Fix weird wave SVG subpixel rendering bug (thin visible line) occurring in some browsers
 
 ## Bugs
 
