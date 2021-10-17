@@ -1,15 +1,36 @@
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import Link from 'next/link';
 import Project from '../../../types/Project';
+import { useInView } from 'react-intersection-observer';
 
-const Card = styled.article`
+interface CardProps {
+  popUp: boolean;
+}
+
+const popUpAnimation = keyframes`
+  0% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+`;
+
+const Card = styled.article<CardProps>`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   background-color: var(--primary-bg-color);
   border-radius: var(--border-radius);
   height: 100%;
-  transition: box-shadow 0.25s, transform 0.25s;
+  transition: box-shadow 0.25s, transform 0.25s, opacity 0.25s;
+  opacity: ${({ popUp }) => (popUp ? 1 : 0)};
 
   box-shadow: var(--box-shadow);
 
@@ -25,6 +46,14 @@ const Card = styled.article`
     transform: translateY(0px);
     transform: translateX(0px);
   }
+
+  ${({ popUp }) =>
+    popUp &&
+    css`
+      animation-name: ${popUpAnimation};
+      animation-duration: 0.25s;
+      /* animation-fill-mode: forwards; */
+    `}
 `;
 
 const Text = styled.div`
@@ -81,9 +110,14 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.25,
+  });
+
   return (
     <Link href={`/project/${project.slug}`} passHref={true}>
-      <Card>
+      <Card ref={ref} popUp={inView}>
         <Text>
           <Title
             style={{

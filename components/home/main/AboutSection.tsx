@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import { useInView } from 'react-intersection-observer';
+import styled, { css, keyframes } from 'styled-components';
 import { Color } from '../../../types/Color';
 import HighlightedLink from '../../HighlightedLink';
 import Wave from '../../Wave';
@@ -16,26 +17,43 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const PlaceholderBox = styled.div`
-  background-color: var(--secondary-bg-color);
-  height: 250px;
-  width: 100%;
-  border-radius: 25px;
-
-  @media only screen and (min-width: 768px) {
-    height: auto;
-    max-width: 35%;
+const wave = keyframes`
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(45deg);
+  }
+`;
+
+interface EmojiProps {
+  waving: boolean;
+}
+
+const HandEmoji = styled.div<EmojiProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+  width: 100%;
+  transform: rotate(0deg);
+  transition: all 0.25s;
+
+  ${({ waving }) =>
+    waving &&
+    css`
+      animation-name: ${wave};
+      animation-duration: 0.25s;
+      animation-iteration-count: 6;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate;
+    `}
 `;
 
 const Information = styled.article`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
-  @media only screen and (min-width: 768px) {
-    /* max-width: 60%; */
-  }
 `;
 
 const Basic = styled.p`
@@ -50,12 +68,19 @@ const Further = styled.p`
 `;
 
 const AboutSection = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.9,
+  });
+
   return (
     <section id="about">
       <h2>About Me</h2>
 
       <ContentWrapper>
-        {/* <PlaceholderBox></PlaceholderBox> */}
+        <HandEmoji ref={ref} waving={inView}>
+          👋
+        </HandEmoji>
         <Information>
           <Basic>
             Nice to meet you! I’m Tobias Helmrich, creative front-end developer
