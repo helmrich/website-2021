@@ -49,6 +49,7 @@ interface MainProps {
 const Main = styled.main<MainProps>`
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
 
   h3 {
@@ -99,9 +100,15 @@ const ProjectDetails = styled.section<ProjectDetailsProps>`
 
 const Links = styled.section`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
+  width: 100%;
+  max-width: var(--max-width);
   padding-bottom: 150px;
+
+  @media only screen and (min-width: 360px) {
+    flex-direction: row;
+  }
 `;
 
 interface ButtonProps {
