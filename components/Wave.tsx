@@ -22,7 +22,7 @@ const Main = styled.div<MainProps>`
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  // Using translateY() here to fix problems with
+  // Using translateY() here to "fix" problems with
   // subpixel rendering (see https://stackoverflow.com/questions/63724661/html-css-gap-between-header-and-shape-divider)
   transform: translateY(2px) rotate(180deg);
 
