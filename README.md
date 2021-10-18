@@ -1,6 +1,6 @@
 ## About
 
-This is my new website written in TypeScript and built with React and [Next.js](https://nextjs.org/), [Styled Components](https://styled-components.com/), [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer), [gray-matter](https://github.com/jonschlinkert/gray-matter) and [marked](https://github.com/markedjs/marked). I wanted to have an easy way to add projects I worked on and associated informations which is why I used gray-matter and marked to be able to write project descriptions as markdown and add infos as front matter.
+This is my new website ([tobiashelmrich.com](https://tobiashelmrich.com)) written in TypeScript and built with React and [Next.js](https://nextjs.org/), [Styled Components](https://styled-components.com/), [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer), [gray-matter](https://github.com/jonschlinkert/gray-matter) and [marked](https://github.com/markedjs/marked). I wanted to have an easy way to add projects I worked on and associated informations which is why I used gray-matter and marked to be able to write project descriptions as markdown and add infos as front matter.
 
 ## Goals
 
@@ -12,7 +12,6 @@ These are some of the things I want to improve and work on in the foreseeable fu
 
 * [ ] Add 3D models and backgrounds
 * [ ] Improve dark mode
-* [ ] Fix weird wave SVG subpixel rendering bug (thin visible line) occurring in some browsers
 
 ## Bugs
 
