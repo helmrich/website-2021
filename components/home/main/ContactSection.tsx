@@ -25,10 +25,7 @@ const SmallText = styled.h4`
 const ContactSection = () => {
   return (
     <MainSection id="contact">
-      <LargeText>Want to work with me?</LargeText>
-      <SmallText>
-        I&apos;m currently looking for an internship as a Front-End engineer.
-      </SmallText>
+      <LargeText>Want to work with me or just say hi?</LargeText>
       <SmallText>
         Get in touch with me on{' '}
         <HighlightedLink
