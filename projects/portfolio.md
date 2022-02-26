@@ -1,7 +1,7 @@
 ---
 title: 'Personal Website'
 description: 'Personal Portfolio Website'
-tags: ['TypeScript', 'React', 'Next.js', 'Styled Components']
+tags: ['TypeScript', 'React', 'Next.js', 'styled-components']
 year: 2021
 linkUrl: 'https://tobiashelmrich.com'
 githubLinkUrl: 'https://github.com/helmrich/website-2021'
