@@ -52,8 +52,6 @@ export const darkTheme: DefaultTheme = {
 };
 
 export const GlobalStyle = createGlobalStyle`
-  // @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Rubik:wght@400;700&display=swap');
-
   html {
     --primary-bg-color: ${({ theme }) => theme.colors.primaryBg};
     --secondary-bg-color: ${({ theme }) => theme.colors.secondaryBg};

@@ -143,12 +143,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             }}
           ></ImageOverlay>
         </ImageContainer>
-        {/* TODO */}
-        {/* <div>
-          {project.frontmatter.tags.map((tag) => {
-            <span>{tag}</span>;
-          })}
-        </div> */}
       </Card>
     </Link>
   );

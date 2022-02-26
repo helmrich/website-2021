@@ -4,7 +4,7 @@ import Project from '../../types/Project';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import marked from 'marked';
+import { marked } from 'marked';
 import Frontmatter from '../../types/Frontmatter';
 import Footer from '../../components/footer/Footer';
 import Wave from '../../components/Wave';
