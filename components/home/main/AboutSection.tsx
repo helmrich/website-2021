@@ -84,7 +84,7 @@ const AboutSection = () => {
         <Information>
           <Basic>
             Nice to meet you! I’m Tobias Helmrich, creative front-end developer
-            and student currently in my second year of studies towards a
+            and working student currently in my third year of studies towards a
             bachelor’s degree in{' '}
             <HighlightedLink
               title="Medieninformatik (Computer Science and Media)"
