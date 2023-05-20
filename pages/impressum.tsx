@@ -81,8 +81,8 @@ const Impressum = () => {
         <section>
           <h2>Angaben gemäß § 5 TMG</h2>
           <p>Tobias Helmrich</p>
-          <p>Neckarkanalstraße 231</p>
-          <p>71686 Remseck am Neckar </p>
+          <p>Sudetenring 24</p>
+          <p>71642 Ludwigsburg</p>
         </section>
         <section>
           <h2>Kontakt</h2>
