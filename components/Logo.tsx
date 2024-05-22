@@ -1,6 +1,5 @@
-import styled from 'styled-components';
-import Link from 'next/link';
-import styles from '../styles/Logo.module.css';
+import styled from "styled-components";
+import Link from "next/link";
 
 const Bracket = styled.span`
   &:first-child {
@@ -13,7 +12,7 @@ const Bracket = styled.span`
   }
 `;
 
-const Main = styled.a`
+const A = styled(Link)`
   color: var(--secondary-fg-color);
   font-family: var(--monospace-font);
   font-weight: 700;
@@ -41,13 +40,11 @@ const Main = styled.a`
 
 const Logo = () => {
   return (
-    <Link href="/" passHref>
-      <Main>
-        <Bracket>{'<'}</Bracket>
-        <span>tobi</span>
-        <Bracket>{'/>'}</Bracket>
-      </Main>
-    </Link>
+    <A href="/">
+      <Bracket>{"<"}</Bracket>
+      <span>tobi</span>
+      <Bracket>{"/>"}</Bracket>
+    </A>
   );
 };
 

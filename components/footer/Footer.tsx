@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import Link from 'next/link';
-import Logo from '../Logo';
+import styled from "styled-components";
+import Link from "next/link";
+import Logo from "../Logo";
 
 const Main = styled.footer`
   display: flex;
@@ -36,7 +36,7 @@ const Copyright = styled.p`
   opacity: 0.5;
 `;
 
-const Imprint = styled.a`
+const A = styled(Link)`
   font-size: 0.75rem;
   margin: 0;
   opacity: 0.5;
@@ -52,9 +52,7 @@ const Footer = () => {
     <Main>
       <Logo />
       <Information>
-        <Link href="/impressum" passHref>
-          <Imprint>Imprint</Imprint>
-        </Link>
+        <A href="/impressum">Imprint</A>
         <Copyright>&copy;{new Date().getFullYear()} Tobias Helmrich</Copyright>
       </Information>
     </Main>

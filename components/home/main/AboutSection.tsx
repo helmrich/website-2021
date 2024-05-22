@@ -1,8 +1,8 @@
-import { useInView } from 'react-intersection-observer';
-import styled, { css, keyframes } from 'styled-components';
-import { Color } from '../../../types/Color';
-import HighlightedLink from '../../HighlightedLink';
-import Wave from '../../Wave';
+import { useInView } from "react-intersection-observer";
+import styled, { css, keyframes } from "styled-components";
+import { Color } from "../../../types/Color";
+import HighlightedLink from "../../HighlightedLink";
+import Wave from "../../Wave";
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ const wave = keyframes`
 `;
 
 interface EmojiProps {
-  waving: boolean;
+  $waving: boolean;
 }
 
 const HandEmoji = styled.div<EmojiProps>`
@@ -39,8 +39,8 @@ const HandEmoji = styled.div<EmojiProps>`
   transform: rotate(0deg);
   transition: all 0.25s;
 
-  ${({ waving }) =>
-    waving &&
+  ${({ $waving }) =>
+    $waving &&
     css`
       animation-name: ${wave};
       animation-duration: 0.25s;
@@ -78,12 +78,13 @@ const AboutSection = () => {
       <h2>About Me</h2>
 
       <ContentWrapper>
-        <HandEmoji ref={ref} waving={inView}>
+        <HandEmoji ref={ref} $waving={inView}>
           👋
         </HandEmoji>
         <Information>
           <Basic>
-            Nice to meet you! I’m Tobias Helmrich, a full-stack developer with a focus on building user interfaces.
+            Nice to meet you! I’m Tobias Helmrich, a full-stack developer with a
+            focus on building user interfaces.
           </Basic>
           <Further>
             I love crafting beautiful web experiences using awesome

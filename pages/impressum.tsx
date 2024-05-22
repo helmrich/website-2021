@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import Footer from '../components/footer/Footer';
-import HighlightedLink from '../components/HighlightedLink';
-import Wave from '../components/Wave';
-import { Color } from '../types/Color';
+import styled from "styled-components";
+import Footer from "../components/footer/Footer";
+import HighlightedLink from "../components/HighlightedLink";
+import Wave from "../components/Wave";
+import { Color } from "../types/Color";
 
 const Main = styled.main`
   display: flex;
@@ -88,7 +88,7 @@ const Impressum = () => {
           <h2>Kontakt</h2>
           <p>Telefon: 0174-6893039</p>
           <p>
-            E-Mail:{' '}
+            E-Mail:{" "}
             <HighlightedLink
               title="tobias.g.helmrich@gmail.com"
               href="mailto:tobias.g.helmrich@gmail.com"
@@ -176,11 +176,11 @@ const Impressum = () => {
         </section>
         <section>
           <p>
-            Website Impressum erstellt durch{' '}
+            Website Impressum erstellt durch{" "}
             <ExternalLink href="https://www.impressum-generator.de">
               impressum-generator.de
-            </ExternalLink>{' '}
-            von der{' '}
+            </ExternalLink>{" "}
+            von der{" "}
             <ExternalLink
               href="https://www.kanzlei-hasselbach.de/"
               rel="nofollow"

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Theme } from '../types/Theme';
+import styled from "styled-components";
+import { Theme } from "../types/Theme";
 
 const Button = styled.button`
   &:hover {

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { Color } from '../../../types/Color';
-import Project from '../../../types/Project';
-import Wave from '../../Wave';
-import ProjectCard from './ProjectCard';
+import styled from "styled-components";
+import { Color } from "../../../types/Color";
+import Project from "../../../types/Project";
+import Wave from "../../Wave";
+import ProjectCard from "./ProjectCard";
 
 const MainSection = styled.section`
   background-color: var(--secondary-bg-color);

@@ -1,7 +1,7 @@
-import styled from 'styled-components';
-import { Color } from '../../../types/Color';
-import HighlightedLink from '../../HighlightedLink';
-import Wave from '../../Wave';
+import styled from "styled-components";
+import { Color } from "../../../types/Color";
+import HighlightedLink from "../../HighlightedLink";
+import Wave from "../../Wave";
 
 const MainSection = styled.section`
   display: flex;
@@ -27,13 +27,13 @@ const ContactSection = () => {
     <MainSection id="contact">
       <LargeText>Want to say hi?</LargeText>
       <SmallText>
-        Get in touch with me on{' '}
+        Get in touch with me on{" "}
         <HighlightedLink
           title="Twitter"
           href="https://twitter.com/tobias_helmrich"
           opensNewTab={true}
-        />{' '}
-        or send me a{' '}
+        />{" "}
+        or send me a{" "}
         <HighlightedLink
           title="mail"
           href="mailto:tobias.g.helmrich@gmail.com"

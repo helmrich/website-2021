@@ -1,7 +1,7 @@
-import { Dispatch, ReactNode } from 'react';
-import { Theme } from '../types/Theme';
-import HeadData from './HeadData';
-import Navbar from './navigation/Navbar';
+import { Dispatch, ReactNode } from "react";
+import { Theme } from "../types/Theme";
+import HeadData from "./HeadData";
+import Navbar from "./navigation/Navbar";
 
 interface LayoutProps {
   children: ReactNode;

@@ -1,9 +1,9 @@
-import styled, { keyframes, css } from 'styled-components';
-import { Color } from '../types/Color';
+import styled, { keyframes, css } from "styled-components";
+import { Color } from "../types/Color";
 
 interface MainProps {
-  inverted: boolean;
-  animated: boolean;
+  $inverted: boolean;
+  $animated: boolean;
 }
 
 const moveToRight = keyframes`
@@ -30,8 +30,8 @@ const Main = styled.div<MainProps>`
     position: relative;
     display: block;
 
-    ${({ animated }) =>
-      animated &&
+    ${({ $animated }) =>
+      $animated &&
       css`
         animation-name: ${moveToRight};
         animation-duration: 4s;
@@ -42,8 +42,8 @@ const Main = styled.div<MainProps>`
       `}
   }
 
-  ${({ inverted }) =>
-    inverted &&
+  ${({ $inverted }) =>
+    $inverted &&
     `
     transform: scaleY(-1);
   `}
@@ -60,7 +60,7 @@ const Wave = ({ height, width, fillColor, inverted = false }: WaveProps) => {
   return (
     // TODO: Implement animation logic, for the time being
     // just setting this to false
-    <Main inverted={inverted} animated={false}>
+    <Main $inverted={inverted} $animated={false}>
       <svg
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
@@ -73,12 +73,12 @@ const Wave = ({ height, width, fillColor, inverted = false }: WaveProps) => {
           style={{
             fill:
               fillColor === Color.SecondaryBg
-                ? 'var(--secondary-bg-color)'
+                ? "var(--secondary-bg-color)"
                 : fillColor === Color.PrimaryFg
-                ? 'var(--primary-fg-color)'
-                : fillColor === Color.SecondaryFg
-                ? 'var(--secondary-fg-color)'
-                : 'var(--primary-bg-color)',
+                  ? "var(--primary-fg-color)"
+                  : fillColor === Color.SecondaryFg
+                    ? "var(--secondary-fg-color)"
+                    : "var(--primary-bg-color)",
           }}
         ></path>
       </svg>

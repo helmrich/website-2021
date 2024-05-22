@@ -2,24 +2,24 @@ import {
   createGlobalStyle,
   DefaultTheme,
   ThemeProvider,
-} from 'styled-components';
-import type { AppProps } from 'next/app';
-import Layout from '../components/Layout';
-import { Theme } from '../types/Theme';
-import { useEffect, useState } from 'react';
+} from "styled-components";
+import type { AppProps } from "next/app";
+import Layout from "../components/Layout";
+import { Theme } from "../types/Theme";
+import { useEffect, useState } from "react";
 
 const defaultThemeValues = {
-  borderRadius: '1rem',
-  maxWidth: '1280px',
-  navHeight: '60px',
-  normalContinuousTextSize: 'clamp(0.75rem, 0.75rem + 1vw, 1.1rem)',
-  normalContinuousTextLineHeight: 'clamp(1.2rem, 1.2rem + 1vw, 1.55rem)',
+  borderRadius: "1rem",
+  maxWidth: "1280px",
+  navHeight: "60px",
+  normalContinuousTextSize: "clamp(0.75rem, 0.75rem + 1vw, 1.1rem)",
+  normalContinuousTextLineHeight: "clamp(1.2rem, 1.2rem + 1vw, 1.55rem)",
 
   shadows: {
     primary:
-      '0.2px 0.3px 0.3px rgba(0, 0, 0, 0.017), 0.4px 0.8px 0.8px rgba(0, 0, 0, 0.024), 0.8px 1.5px 1.5px rgba(0, 0, 0, 0.03), 1.3px 2.7px 2.7px rgba(0, 0, 0, 0.036), 2.5px 5px 5px rgba(0, 0, 0, 0.043), 6px 12px 12px rgba(0, 0, 0, 0.06)',
+      "0.2px 0.3px 0.3px rgba(0, 0, 0, 0.017), 0.4px 0.8px 0.8px rgba(0, 0, 0, 0.024), 0.8px 1.5px 1.5px rgba(0, 0, 0, 0.03), 1.3px 2.7px 2.7px rgba(0, 0, 0, 0.036), 2.5px 5px 5px rgba(0, 0, 0, 0.043), 6px 12px 12px rgba(0, 0, 0, 0.06)",
     primaryHover:
-      '0.3px 0.6px 0.6px rgba(0, 0, 0, 0.022), 0.7px 1.3px 1.3px rgba(0, 0, 0, 0.032), 1.3px 2.5px 2.5px rgba(0, 0, 0, 0.04), 2.2px 4.5px 4.5px rgba(0, 0, 0, 0.048), 4.2px 8.4px 8.4px rgba(0, 0, 0, 0.058), 10px 20px 20px rgba(0, 0, 0, 0.08)',
+      "0.3px 0.6px 0.6px rgba(0, 0, 0, 0.022), 0.7px 1.3px 1.3px rgba(0, 0, 0, 0.032), 1.3px 2.5px 2.5px rgba(0, 0, 0, 0.04), 2.2px 4.5px 4.5px rgba(0, 0, 0, 0.048), 4.2px 8.4px 8.4px rgba(0, 0, 0, 0.058), 10px 20px 20px rgba(0, 0, 0, 0.08)",
   },
 
   fonts: {
@@ -32,10 +32,10 @@ export const lightTheme: DefaultTheme = {
   ...defaultThemeValues,
 
   colors: {
-    primaryBg: '#ffffff',
-    secondaryBg: '#fdf6fa',
-    primaryFg: '#3f3038',
-    secondaryFg: '#f361af',
+    primaryBg: "#ffffff",
+    secondaryBg: "#fdf6fa",
+    primaryFg: "#3f3038",
+    secondaryFg: "#f361af",
   },
 };
 
@@ -44,10 +44,10 @@ export const darkTheme: DefaultTheme = {
 
   colors: {
     // TODO: Colors work in progress
-    primaryBg: '#000000',
-    secondaryBg: '#222222',
-    primaryFg: '#ffffff',
-    secondaryFg: '#f361af',
+    primaryBg: "#000000",
+    secondaryBg: "#222222",
+    primaryFg: "#ffffff",
+    secondaryFg: "#f361af",
   },
 };
 
@@ -167,7 +167,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     // Check user's preferred color scheme (dark/light) and set theme accordingly
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setTheme(Theme.Dark);
     } else {
       setTheme(Theme.Light);

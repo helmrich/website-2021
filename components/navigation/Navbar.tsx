@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import Logo from '../Logo';
-import NavLink from './NavLink';
-import { useState } from 'react';
-import ThemeToggle from '../ThemeToggle';
-import { Theme } from '../../types/Theme';
+import styled from "styled-components";
+import Logo from "../Logo";
+import NavLink from "./NavLink";
+import { useState } from "react";
+import ThemeToggle from "../ThemeToggle";
+import { Theme } from "../../types/Theme";
 
 const Navigation = styled.nav`
   position: fixed;
@@ -20,7 +20,7 @@ const Navigation = styled.nav`
 `;
 
 interface LinkListProps {
-  isHidden: boolean;
+  $isHidden: boolean;
 }
 
 const LinkList = styled.ul<LinkListProps>`
@@ -39,8 +39,8 @@ const LinkList = styled.ul<LinkListProps>`
   z-index: 10;
 
   @media only screen and (max-width: 767px) {
-    ${({ isHidden }) =>
-      isHidden &&
+    ${({ $isHidden }) =>
+      $isHidden &&
       `
       display: none;
     `}
@@ -78,7 +78,7 @@ const Icon = styled.li`
 `;
 
 interface HamburgerIconProps {
-  isOpen: boolean;
+  $isOpen: boolean;
 }
 
 const HamburgerIcon = styled.div<HamburgerIconProps>`
@@ -116,8 +116,8 @@ const HamburgerIcon = styled.div<HamburgerIconProps>`
   }
 
   span:nth-child(1) {
-    ${({ isOpen }) =>
-      isOpen &&
+    ${({ $isOpen }) =>
+      $isOpen &&
       `
         top: 8px;
         transform: rotate(45deg);
@@ -125,16 +125,16 @@ const HamburgerIcon = styled.div<HamburgerIconProps>`
   }
 
   span:nth-child(2) {
-    ${({ isOpen }) =>
-      isOpen &&
+    ${({ $isOpen }) =>
+      $isOpen &&
       `
         opacity: 0;
     `}
   }
 
   span:nth-child(3) {
-    ${({ isOpen }) =>
-      isOpen &&
+    ${({ $isOpen }) =>
+      $isOpen &&
       `
         top: 8px;
         width: 100%;
@@ -163,7 +163,7 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
   return (
     <Navigation>
       <Logo />
-      <LinkList isHidden={!isMobileMenuOpen}>
+      <LinkList $isHidden={!isMobileMenuOpen}>
         <li>
           <NavLink
             title="About"
@@ -227,7 +227,7 @@ const Navbar = ({ theme, toggleTheme }: NavbarProps) => {
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label="Open the menu"
       >
-        <HamburgerIcon isOpen={isMobileMenuOpen} aria-hidden="true">
+        <HamburgerIcon $isOpen={isMobileMenuOpen} aria-hidden="true">
           <span></span>
           <span></span>
           <span></span>

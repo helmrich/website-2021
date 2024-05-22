@@ -1,14 +1,14 @@
-import styled from 'styled-components';
-import HeadData from '../../components/HeadData';
-import Project from '../../types/Project';
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { marked } from 'marked';
-import Frontmatter from '../../types/Frontmatter';
-import Footer from '../../components/footer/Footer';
-import Wave from '../../components/Wave';
-import { Color } from '../../types/Color';
+import styled from "styled-components";
+import HeadData from "../../components/HeadData";
+import Project from "../../types/Project";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { marked } from "marked";
+import Frontmatter from "../../types/Frontmatter";
+import Footer from "../../components/footer/Footer";
+import Wave from "../../components/Wave";
+import { Color } from "../../types/Color";
 
 const Header = styled.header`
   background-color: var(--secondary-bg-color);
@@ -42,7 +42,7 @@ const HeadingContainer = styled.div`
 `;
 
 interface MainProps {
-  colorHexcode?: string;
+  $colorHexcode?: string;
 }
 
 const Main = styled.main<MainProps>`
@@ -52,7 +52,7 @@ const Main = styled.main<MainProps>`
   position: relative;
 
   h3 {
-    ${({ colorHexcode }) => colorHexcode && `color: #${colorHexcode}`};
+    ${({ $colorHexcode }) => $colorHexcode && `color: #${$colorHexcode}`};
     width: 100%;
     text-align: left;
   }
@@ -70,8 +70,8 @@ const Main = styled.main<MainProps>`
 `;
 
 interface ProjectDetailsProps {
-  borderColor?: string;
-  hoverColor?: string;
+  $borderColor?: string;
+  $hoverColor?: string;
 }
 
 const ProjectDetails = styled.section<ProjectDetailsProps>`
@@ -83,21 +83,21 @@ const ProjectDetails = styled.section<ProjectDetailsProps>`
   a {
     transition: all 0.25s;
     border-bottom: 3px solid
-      ${({ borderColor }) =>
-        borderColor ? `#${borderColor}` : 'var(--secondary-fg-color)'};
+      ${({ $borderColor }) =>
+        $borderColor ? `#${$borderColor}` : "var(--secondary-fg-color)"};
 
     &:hover {
-      color: ${({ hoverColor }) =>
-        hoverColor ? `#${hoverColor}` : 'var(--primary-bg-color)'};
-      background-color: ${({ borderColor }) =>
-        borderColor ? `#${borderColor}` : 'var(--secondary-fg-color)'};
+      color: ${({ $hoverColor }) =>
+        $hoverColor ? `#${$hoverColor}` : "var(--primary-bg-color)"};
+      background-color: ${({ $borderColor }) =>
+        $borderColor ? `#${$borderColor}` : "var(--secondary-fg-color)"};
     }
   }
 `;
 
 interface TagProps {
-  backgroundColor?: string;
-  color?: string;
+  $backgroundColor?: string;
+  $color?: string;
 }
 
 const Tags = styled.section<TagProps>`
@@ -117,9 +117,10 @@ const Tags = styled.section<TagProps>`
     padding: 0.5rem 1rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
-    background-color: ${({ backgroundColor }) =>
-      backgroundColor ? `#${backgroundColor}` : 'var(--secondary-fg-color)'};
-    color: ${({ color }) => (color ? `#${color}` : 'var(--primary-bg-color)')};
+    background-color: ${({ $backgroundColor }) =>
+      $backgroundColor ? `#${$backgroundColor}` : "var(--secondary-fg-color)"};
+    color: ${({ $color }) =>
+      $color ? `#${$color}` : "var(--primary-bg-color)"};
     border-radius: var(--border-radius);
   }
 `;
@@ -138,28 +139,29 @@ const Links = styled.section`
 `;
 
 interface ButtonProps {
-  backgroundColor?: string;
-  color?: string;
+  $backgroundColor?: string;
+  $color?: string;
 }
 
 const Button = styled.a<ButtonProps>`
   padding: 0.75rem 2rem;
   font-family: var(--main-font);
   font-weight: 700;
-  background-color: ${({ backgroundColor }) =>
-    backgroundColor ? `#${backgroundColor}` : 'var(--primary-bg-color)'};
-  color: ${({ color }) => (color ? `#${color}` : 'var(--secondary-fg-color)')};
+  background-color: ${({ $backgroundColor }) =>
+    $backgroundColor ? `#${$backgroundColor}` : "var(--primary-bg-color)"};
+  color: ${({ $color }) =>
+    $color ? `#${$color}` : "var(--secondary-fg-color)"};
   border-radius: var(--border-radius);
   border: 4px solid
-    ${({ color }) => (color ? `#${color}` : 'var(--secondary-fg-color)')};
+    ${({ $color }) => ($color ? `#${$color}` : "var(--secondary-fg-color)")};
   box-shadow: var(--box-shadow);
   transition: all 0.25s;
 
   &:hover {
-    background-color: ${({ color }) =>
-      color ? `#${color}` : 'var(--secondary-fg-color)'};
-    color: ${({ backgroundColor }) =>
-      backgroundColor ? `#${backgroundColor}` : 'var(--primary-bg-color)'};
+    background-color: ${({ $color }) =>
+      $color ? `#${$color}` : "var(--secondary-fg-color)"};
+    color: ${({ $backgroundColor }) =>
+      $backgroundColor ? `#${$backgroundColor}` : "var(--primary-bg-color)"};
     box-shadow: var(--box-shadow-hover);
   }
 
@@ -176,7 +178,7 @@ interface ProjectPageProps {
 const ProjectPage = ({ project, content }: ProjectPageProps) => {
   const colorHexcode = project.frontmatter.colorHexcode
     ? `#${project.frontmatter.colorHexcode}`
-    : '#f361af';
+    : "#f361af";
 
   return (
     <>
@@ -184,26 +186,26 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
       <Header
         // 'bf' is the hexadecimal equivalent of 0.75 for the alpha channel (see https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4)
         style={{
-          backgroundImage: `linear-gradient(${colorHexcode + 'bf'}, ${
-            colorHexcode + 'bf'
+          backgroundImage: `linear-gradient(${colorHexcode + "bf"}, ${
+            colorHexcode + "bf"
           }), url(${project.frontmatter.imagePath})`,
-          backgroundSize: 'cover',
+          backgroundSize: "cover",
         }}
       >
         <HeadingContainer>
-          <h1 style={{ color: '#ffffff' }}>{project.frontmatter.title}</h1>
-          <p style={{ color: '#ffffff' }}>{project.frontmatter.description}</p>
+          <h1 style={{ color: "#ffffff" }}>{project.frontmatter.title}</h1>
+          <p style={{ color: "#ffffff" }}>{project.frontmatter.description}</p>
         </HeadingContainer>
         <Wave width={175} height={70} fillColor={Color.PrimaryBg} />
       </Header>
-      <Main colorHexcode={project.frontmatter.colorHexcode}>
+      <Main $colorHexcode={project.frontmatter.colorHexcode}>
         <ProjectDetails
           dangerouslySetInnerHTML={{
             __html: marked(content),
           }}
-          borderColor={project.frontmatter.colorHexcode}
+          $borderColor={project.frontmatter.colorHexcode}
         ></ProjectDetails>
-        <Tags backgroundColor={project.frontmatter.colorHexcode}>
+        <Tags $backgroundColor={project.frontmatter.colorHexcode}>
           <ul>
             {project.frontmatter.tags.map((tag, index) => {
               return <li key={index}>{tag}</li>;
@@ -216,7 +218,7 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
               href={project.frontmatter.githubLinkUrl}
               target="_blank"
               rel="noopener noreferrer"
-              color={project.frontmatter.colorHexcode}
+              $color={project.frontmatter.colorHexcode}
             >
               GitHub
             </Button>
@@ -226,7 +228,7 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
               href={project.frontmatter.linkUrl}
               target="_blank"
               rel="noopener noreferrer"
-              color={project.frontmatter.colorHexcode}
+              $color={project.frontmatter.colorHexcode}
             >
               See Project
             </Button>
@@ -245,10 +247,10 @@ const ProjectPage = ({ project, content }: ProjectPageProps) => {
 };
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join('projects'));
+  const files = fs.readdirSync(path.join("projects"));
   const paths = files.map((file) => {
     return {
-      params: { slug: file.replace('.md', '') },
+      params: { slug: file.replace(".md", "") },
     };
   });
 
@@ -266,8 +268,8 @@ interface StaticProps {
 
 export async function getStaticProps({ params: { slug } }: StaticProps) {
   const markdownWithMeta = fs.readFileSync(
-    path.join('projects', `${slug}.md`),
-    'utf-8'
+    path.join("projects", `${slug}.md`),
+    "utf-8",
   );
 
   const { data, content } = matter(markdownWithMeta);

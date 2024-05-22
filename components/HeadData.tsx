@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 
 interface HeadDataProps {
   title?: string;
@@ -7,9 +7,9 @@ interface HeadDataProps {
 }
 
 const HeadData = ({
-  title = 'Tobias Helmrich | Creative Developer',
-  keywords = 'portfolio, front-end, javascript, front-end developer, front-end engineer, developer, react',
-  description = 'Creative front-end developer and computer science student living in the Stuttgart region.',
+  title = "Tobias Helmrich | Creative Developer",
+  keywords = "portfolio, front-end, javascript, front-end developer, front-end engineer, developer, react",
+  description = "Creative front-end developer and computer science student living in the Stuttgart region.",
 }: HeadDataProps) => {
   return (
     <Head>

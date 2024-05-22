@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Color } from '../../../types/Color';
-import Wave from '../../Wave';
+import styled from "styled-components";
+import { Color } from "../../../types/Color";
+import Wave from "../../Wave";
 
 const Main = styled.header`
   display: flex;
@@ -26,6 +26,10 @@ const TextWrapper = styled.div`
 `;
 
 const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
   @media only screen and (min-width: 1280px) {
     align-self: flex-start;
     max-width: 75%;
@@ -39,6 +43,7 @@ const Small = styled.p`
 const Large = styled.p`
   font-weight: 700;
   font-size: clamp(1.6rem, 1.6rem + 4vw, 4rem);
+  line-height: 105%;
 `;
 
 const Header = () => {

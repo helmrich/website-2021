@@ -1,10 +1,10 @@
-import styled, { css, keyframes } from 'styled-components';
-import Link from 'next/link';
-import Project from '../../../types/Project';
-import { useInView } from 'react-intersection-observer';
+import styled, { css, keyframes } from "styled-components";
+import Link from "next/link";
+import Project from "../../../types/Project";
+import { useInView } from "react-intersection-observer";
 
 interface CardProps {
-  popUp: boolean;
+  $popUp: boolean;
 }
 
 const popUpAnimation = keyframes`
@@ -29,8 +29,11 @@ const Card = styled.article<CardProps>`
   background-color: var(--primary-bg-color);
   border-radius: var(--border-radius);
   height: 100%;
-  transition: box-shadow 0.25s, transform 0.25s, opacity 0.25s;
-  opacity: ${({ popUp }) => (popUp ? 1 : 0)};
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s,
+    opacity 0.25s;
+  opacity: ${({ $popUp }) => ($popUp ? 1 : 0)};
 
   box-shadow: var(--box-shadow);
 
@@ -47,8 +50,8 @@ const Card = styled.article<CardProps>`
     transform: translateX(0px);
   }
 
-  ${({ popUp }) =>
-    popUp &&
+  ${({ $popUp }) =>
+    $popUp &&
     css`
       animation-name: ${popUpAnimation};
       animation-duration: 0.25s;
@@ -117,13 +120,13 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
 
   return (
     <Link href={`/project/${project.slug}`} passHref={true}>
-      <Card ref={ref} popUp={inView}>
+      <Card ref={ref} $popUp={inView}>
         <Text>
           <Title
             style={{
               color: project.frontmatter.colorHexcode
                 ? `#${project.frontmatter.colorHexcode}`
-                : 'var(--secondary-fg-color)',
+                : "var(--secondary-fg-color)",
             }}
           >
             {project.frontmatter.title}
@@ -139,7 +142,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             style={{
               backgroundColor: project.frontmatter.colorHexcode
                 ? `#${project.frontmatter.colorHexcode}`
-                : 'var(--secondary-fg-color)',
+                : "var(--secondary-fg-color)",
             }}
           ></ImageOverlay>
         </ImageContainer>

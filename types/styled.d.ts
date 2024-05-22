@@ -1,7 +1,7 @@
 // See https://styled-components.com/docs/api#typescript
-import 'styled-components';
+import "styled-components";
 
-declare module 'styled-components' {
+declare module "styled-components" {
   export interface DefaultTheme {
     borderRadius: string;
     maxWidth: string;

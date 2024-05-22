@@ -1,8 +1,7 @@
-import styled from 'styled-components';
-import Link from 'next/link';
-import { MouseEventHandler } from 'react';
+import styled from "styled-components";
+import Link from "next/link";
 
-const InnerLink = styled.a`
+const A = styled(Link)`
   opacity: 0.75;
   transition: all 0.25s;
 
@@ -23,9 +22,9 @@ const NavLink = ({ title, href, setIsMobileMenuOpen }: NavLinkProps) => {
   };
 
   return (
-    <Link href={href} passHref>
-      <InnerLink {...innerLinkProps}>{title}</InnerLink>
-    </Link>
+    <A href={href} {...innerLinkProps}>
+      {title}
+    </A>
   );
 };
 
