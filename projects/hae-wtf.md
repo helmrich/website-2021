@@ -10,7 +10,7 @@ colorHexcode: '56a0d1'
 
 ### About
 
-[hä? WTF!](https://hae.wtf/) was created by four fellow students and myself during our 4th semester at HdM Stuttgart as a semester project. It is a trivia quiz game based on questions provided by the [Open Trivia Database](https://opentdb.com/) API.
+[hä? WTF!](https://wtf.jonasheld.com/) was created by four fellow students and myself during our 4th semester at HdM Stuttgart as a semester project. It is a trivia quiz game based on questions provided by the [Open Trivia Database](https://opentdb.com/) API.
 
 Besides taking part in developing the frontend and a few minor parts of the backend for the web app I was also more heavily involved in the DevOps side of things than ever before, using Docker as a development environment and for deployment on a server instance and (trying) setting up a CI/CD pipeline for the first time. To be honest, I was really struggling with DevOps and it was hard for me and a fellow student to get things up and running.
 
