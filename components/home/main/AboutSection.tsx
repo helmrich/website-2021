@@ -83,20 +83,7 @@ const AboutSection = () => {
         </HandEmoji>
         <Information>
           <Basic>
-            Nice to meet you! I’m Tobias Helmrich, creative front-end developer
-            and working student currently in my third year of studies towards a
-            bachelor’s degree in{' '}
-            <HighlightedLink
-              title="Medieninformatik (Computer Science and Media)"
-              href="https://www.hdm-stuttgart.de/en/prospective_students/academic_programs/all_programs/steckbrief?sgang_ID=550033"
-              opensNewTab={true}
-            />{' '}
-            <HighlightedLink
-              title="@HdM Stuttgart"
-              href="https://www.hdm-stuttgart.de/en"
-              opensNewTab={true}
-            />
-            .
+            Nice to meet you! I’m Tobias Helmrich, a full-stack developer with a focus on building user interfaces.
           </Basic>
           <Further>
             I love crafting beautiful web experiences using awesome
@@ -105,7 +92,7 @@ const AboutSection = () => {
             learning and exploring new languages, frameworks and tools to create
             even better products. Besides that I really want to get into 3D
             modeling using Blender, designing user interfaces in Figma and
-            creating 3D web experiences using three.js.
+            creating 3D web experiences using three.js and react-three-fiber.
           </Further>
         </Information>
       </ContentWrapper>

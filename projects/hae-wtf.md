@@ -3,7 +3,7 @@ title: 'hä? WTF!'
 description: 'Trivia Quiz Game Web App'
 tags: ['TypeScript', 'React', 'Next.js', 'styled-components', 'Docker', 'Socket.IO', 'Node']
 year: 2022
-linkUrl: 'https://hae.wtf/'
+linkUrl: 'https://wtf.jonasheld.com/'
 imagePath: '/images/projects/hae-wtf.jpg'
 colorHexcode: '56a0d1'
 ---
